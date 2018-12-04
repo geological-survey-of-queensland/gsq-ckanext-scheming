@@ -1,7 +1,7 @@
 {
   "scheming_version": 1,
   "dataset_type": "dataset",
-  "about": "A reimplementation of the default CKAN dataset schema",
+  "about": "A custom test schema for CKAN.",
   "about_url": "http://github.com/ckan/ckanext-scheming",
   "dataset_fields": [
     {
@@ -9,6 +9,47 @@
       "label": "Title",
       "preset": "title",
       "form_placeholder": "eg. A descriptive title"
+    },
+    {
+      "field_name": "theme",
+      "label": "theme",
+      "form_placeholder": "http://www.google.com",
+      "display_property": "theme",
+      "display_snippet": "link.html"
+    },
+    {
+      "field_name": "select",
+      "label": "Creator Organization",
+      "preset": "select_creator_org"
+    },
+    {
+      "field_name": "term",
+      "label": "Term",
+      "help_text": "Choose a suitable term out of the Sea Surface Temperature vocabulary.",
+      "help_inline": true,
+      "preset": "select_ajax",
+      "choices": [
+        {
+          "value": "bactrian",
+          "label": "Bactrian Camel"
+        },
+        {
+          "value": "hybrid",
+          "label": "Hybrid Camel"
+        },
+        {
+          "value": "f2hybrid",
+          "label": "F2 Hybrid Camel"
+        },
+        {
+          "value": "snowwhite",
+          "label": "Snow-white Dromedary"
+        },
+        {
+          "value": "black",
+          "label": "Black Camel"
+        }
+      ]
     },
     {
       "field_name": "name",

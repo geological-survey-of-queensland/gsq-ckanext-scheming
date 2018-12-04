@@ -1,0 +1,19 @@
+{# 
+    Edmond Chuc, edmond.chuc@csiro.au 
+    
+    Get the organizations and match the value id to the organization's display_name and display it. 
+#}
+
+{% set display = {'org': none} %}
+{% for org in h.organizations_available('create_dataset') %}
+	{% if org.id == data[field.field_name] %}
+		{% if display.update({'org': org}) %} {% endif %}
+	{% endif %}
+{% endfor %}
+
+
+{% if display.org is not none %}
+	<a href="/organization/{{ display.org.name }}">{{ display.org.display_name }}</a>
+{% else %}
+	Not found
+{% endif %}

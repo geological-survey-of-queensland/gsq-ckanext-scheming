@@ -1,6 +1,6 @@
 {
   "scheming_presets_version": 1,
-  "about": "these are the default scheming field presets",
+  "about": "these are the default scheming field presets plus some custom ones.",
   "about_url": "http://github.com/ckan/ckanext-scheming#preset",
   "presets": [
     {
@@ -31,6 +31,13 @@
           "data-module-tags": "",
           "data-module-source": "/api/2/util/tag/autocomplete?incomplete=?"
         }
+      }
+    },
+    {
+      "preset_name": "dataset_organization_no_validators",
+      "values": {
+        "validators": "",
+        "form_snippet": "creator_organization.html"
       }
     },
     {
@@ -68,6 +75,22 @@
         "form_snippet": "select.html",
         "display_snippet": "select.html",
         "validators": "scheming_required scheming_choices"
+      }
+    },
+    {
+      "preset_name": "select_ajax",
+      "values": {
+        "form_snippet": "form_snippet_select.html",
+        "display_snippet": "select_link.html",
+        "validators": "scheming_required"
+      }
+    },
+    {
+      "preset_name": "select_creator_org",
+      "values": {
+        "form_snippet": "form_snippet_select.html",
+        "display_snippet": "select_creator_link.html",
+        "validators": "scheming_required"
       }
     },
     {
