@@ -88,7 +88,7 @@
     {
       "preset_name": "select_creator_org",
       "values": {
-        "form_snippet": "form_snippet_select.html",
+        "form_snippet": "select_creator_form.html",
         "display_snippet": "select_creator_link.html",
         "validators": "scheming_required"
       }
