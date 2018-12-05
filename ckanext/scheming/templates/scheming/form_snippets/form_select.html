@@ -100,33 +100,36 @@
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
           <script type="text/javascript">
             $(document).ready(function(){
-                    $.get("http://vocabs.ands.org.au/repository/api/sparql/ga_netcdf-ld-example-surface-temperature_v1-0?query=PREFIX%20skos%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3ESELECT%20*%20WHERE%20%7B%3Fs%20a%20skos%3AConcept%20%3Bskos%3AprefLabel%20%3Fpl%20.FILTER%20(lang(%3Fpl)%20%3D%20%22en%22)%7D &Accept=application/sparql-results%2Bjson", function(data, status){
-                        
-                      console.log(`Status: {status}`);
-    
-    
-                      items = data['results']['bindings'];
-                      
-                      var options = [];
-    
-                      for(var property in items) {
-                        // console.log(items[property]['pl']['value']);
-                        var label = items[property]['pl']['value'];   // prefLabel
-                        var value = items[property]['s']['value'];    // subject uri
-                        console.log(`label: ${label} value: ${value}`);
-                        options.push([label, value]);
-                      }
-    
-                      
-    
-                      var select = document.getElementById("{{ id or name }}"); 
-                      for(var i = 0; i < options.length; i++) {
-                      var el = document.createElement("option");
-                      el.textContent = options[i][0];
-                      el.value = options[i][1];
-                      select.appendChild(el);
-                      }
-                    });
+                    $.ajax({
+                      url: '{{ resource_url }}',
+                      error: function() {
+                        console.log('An error occured when fetching from URL: {{ resource_url }}');
+                      },
+                      dataType: 'json', // specify that we want a response in JSON
+                      success: function(data) {
+                        console.log(data);
+                        items = data['results']['bindings'];
+
+                        var options = [];
+
+                        for(var property in items) {
+                          // console.log(items[property]['pl']['value']);
+                          var label = items[property]['pl']['value'];   // prefLabel
+                          var value = items[property]['s']['value'];    // subject uri
+                          console.log(`label: ${label} value: ${value}`);
+                          options.push([label, value]);
+                        }
+
+                          var select = document.getElementById("{{ id or name }}"); 
+                          for(var i = 0; i < options.length; i++) {
+                            var el = document.createElement("option");
+                            el.textContent = options[i][0];
+                            el.value = options[i][1];
+                            select.appendChild(el);
+                          }
+                      },
+                      type: 'GET'
+                    })
                 });
           </script>
         </select>

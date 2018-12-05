@@ -26,6 +26,7 @@
 
 {% call form.select(
     field.field_name,
+    field.resource_url,
     id='field-' + field.field_name,
     label=h.scheming_language_text(field.label),
     options=options,
