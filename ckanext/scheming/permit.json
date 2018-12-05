@@ -46,7 +46,7 @@
     {
       "field_name": "creator_org",
       "label": "Creator Organization",
-      "preset": "select-creator-org"
+      "preset": "select_creator_org"
     },
     {
       "field_name": "name",
