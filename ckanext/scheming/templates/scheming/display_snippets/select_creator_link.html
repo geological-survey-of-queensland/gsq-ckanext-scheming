@@ -5,12 +5,7 @@
 #}
 
 {% set display = {'org': none} %}
-{% for org in h.organizations_available('create_dataset') %}
-	{% if org.id == data[field.field_name] %}
-		{% if display.update({'org': org}) %} {% endif %}
-	{% endif %}
-{% endfor %}
-
+{% if display.update({'org': h.get_organization(data[field.field_name])}) %}{% endif %}
 
 {% if display.org is not none %}
 	<a href="/organization/{{ display.org.name }}">{{ display.org.display_name }}</a>
