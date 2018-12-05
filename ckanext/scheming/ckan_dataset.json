@@ -18,7 +18,7 @@
       "display_snippet": "link.html"
     },
     {
-      "field_name": "select",
+      "field_name": "creator_org",
       "label": "Creator Organization",
       "preset": "select_creator_org"
     },
