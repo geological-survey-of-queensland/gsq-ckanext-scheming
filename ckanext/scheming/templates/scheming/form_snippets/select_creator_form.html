@@ -4,7 +4,7 @@
     Enable a HTML select drop-down list options to be asynchronously fetched from an external resource. 
 #}
 
-{% import 'macros/form.html' as form %}
+{% import 'scheming/form_snippets/select_creator_snippet_form.html' as form %}
 
 {%- set options=[] -%}
 
@@ -25,6 +25,8 @@
 {%- endif -%}
 
 {% call form.select(
+    data,
+    field,
     field.field_name,
     id='field-' + field.field_name,
     label=h.scheming_language_text(field.label),
