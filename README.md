@@ -14,7 +14,10 @@ template snippets for editing and display are also supported.
 Contact
 =======
 
-
+**Edmond Chuc**  
+*Software engineer*  
+edmond.chuc@csiro.au  
+CSIRO Land and Water, Environmental Informatics Group  
 
 
 Requirements
