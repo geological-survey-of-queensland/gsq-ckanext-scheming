@@ -8,7 +8,7 @@ template snippets for editing and display are also supported.
 [![Circle CI](https://circleci.com/gh/ckan/ckanext-scheming/tree/master.svg?style=svg)](https://circleci.com/gh/ckan/ckanext-scheming/tree/master)
 [![Coverage](https://coveralls.io/repos/ckan/ckanext-scheming/badge.svg?branch=master&service=github)](https://coveralls.io/github/ckan/ckanext-scheming?branch=master)
 
-**This extension has been modified to cater for the schema requirements of GSQ datasets.**
+**This extension has been modified to cater for the schema requirements of GSQ datasets at Qld Gov.**
 
 
 Modifications
