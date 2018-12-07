@@ -27,11 +27,11 @@
 {% for f in c.scheming_fields %}
 
 	{% if f.field_name == 'contact_person' %}
-		<p><strong>Name:</strong> {{ c.group_dict[f.field_name] }}</p>
+		<p><strong>Name: </strong>{{ c.group_dict[f.field_name] }}</p>
 	{% elif f.field_name == 'contact_person_email' %}
-		<p><strong>Email:</strong> {{ c.group_dict[f.field_name] }}</p>
+		<p><strong>Email: </strong>{{ c.group_dict[f.field_name] }}</p>
 	{% elif f.field_name == 'contact_phone_no' %}
-		<p><strong>Phone no:</strong>{{ c.group_dict[f.field_name] }}</p>
+		<p><strong>Phone no: </strong>{{ c.group_dict[f.field_name] }}</p>
 	{% endif %}
 
 {% endfor %}
