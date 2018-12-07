@@ -11,6 +11,27 @@ template snippets for editing and display are also supported.
 **This extension has been modified to cater for the schema requirements of GSQ datasets.**
 
 
+Modifications
+-------------
+
+- Custom JSON schemas modelled for the project's datasets
+- Enhanced form and display snippets 
+  - Creator Organization select drop-down field to select an organization from the internal CKAN list
+  - Linking of values to internal CKAN resources (such as Creator Organization value)
+  - Select drop-down menu can fetch from online vocabulary source (in JSON format)
+  - Updated the simple and generic display template for displaying custom organization schemas
+  - Additional pill nav buttons for different datasets like permits, borehole, etc.
+  
+  
+todo
+----
+
+- Show organization field information **only** if the value was set. Currently I've only implemented this behaviour for the Alternate organization names.
+- Re-evaluate the deprecated feature for vocabulary values (it will always show the deprecated message because there's no system in place to fetch the vocabulary for the internal JSON schema yet).
+- Attempt to fix the issue where the pill nav buttons are active for anything related to datasets at the same time.
+  - I.e. viewing /dataset also makes /permit nav button active since they're both of type "dataset".
+
+
 Contact
 =======
 
