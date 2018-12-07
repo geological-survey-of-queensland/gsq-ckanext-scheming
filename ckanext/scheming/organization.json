@@ -25,7 +25,7 @@
       "form_placeholder": "A little information about my organization..."
     },
     {
-      "field_name": "url",
+      "field_name": "image_url",
       "label": "Image URL",
       "form_placeholder": "http://example.com/my-image.jpg"
     },
