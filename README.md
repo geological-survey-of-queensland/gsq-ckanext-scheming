@@ -56,10 +56,9 @@ Set the schemas you want to use with configuration options:
 ckan.plugins = scheming_datasets
 
 #   module-path:file to schemas being used
-scheming.dataset_schemas = ckanext.spatialx:spatialx_schema.json
-                           ckanext.spatialx:spatialxy_schema.json
-#   will try to load "spatialx_schema.json" and "spatialxy_schema.json"
-#   as dataset schemas
+scheming.dataset_schemas = ckanext.scheming:ckan_dataset.json ckanext.scheming:permit.json
+scheming.organization_schemas = ckanext.scheming:organization.json
+
 #
 #   URLs may also be used, e.g:
 #
