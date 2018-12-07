@@ -133,7 +133,7 @@
                           }
                           document.getElementById('{{ id or name }}').value = '{{ selected }}';
                           // document.getElementById('select2-chosen-1').innerHTML = selected_innerHTML;
-                          document.getElementById('select2id_' + label).children[0].children[0].innerHTML = selected_innerHTML;
+                          document.getElementById('s2id_' + '{{ id }}').children[0].children[0].innerHTML = selected_innerHTML;
                       },
                       type: 'GET'
                     })
