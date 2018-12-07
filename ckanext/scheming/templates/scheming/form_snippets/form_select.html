@@ -126,6 +126,7 @@
                             el.value = options[i][1];
                             select.appendChild(el);
                           }
+                          document.getElementById('{{ id or name }}').value = '{{ selected }}';
                       },
                       type: 'GET'
                     })
