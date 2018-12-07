@@ -26,7 +26,6 @@ Modifications
 todo
 ----
 
-- In the organization schema, the image url field is not being mapped correctly to CKAN. Thus, the organization logo is now not displaying.
 - Show organization field information **only** if the value was set. Currently I've only implemented this behaviour for the Alternate organization names.
 - Re-evaluate the deprecated feature for vocabulary values (it will always show the deprecated message because there's no system in place to fetch the vocabulary for the internal JSON schema yet).
 - Attempt to fix the issue where the pill nav buttons are active for anything related to datasets at the same time.
