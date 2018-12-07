@@ -21,6 +21,8 @@ Modifications
   - Select drop-down menu can fetch from online vocabulary source (in JSON format)
   - Updated the simple and generic display template for displaying custom organization schemas
   - Additional pill nav buttons for different datasets like permits, borehole, etc.
+  - Enabled auto-completion for select drop-down menus
+    - This is enabled for both the AJAX select and the normal select.
   
   
 todo

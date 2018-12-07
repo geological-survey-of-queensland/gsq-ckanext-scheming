@@ -33,7 +33,9 @@
     selected=data[field.field_name],
     error=errors[field.field_name],
     classes=['control-medium'],
-    attrs=field.form_attrs if 'form_attrs' in field else {"class": "form-control"},
+    attrs=field.form_attrs if 'form_attrs' in field else {
+      "data-module": "autocomplete"
+    },
     is_required=h.scheming_field_required(field)
     )
 %}

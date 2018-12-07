@@ -29,6 +29,14 @@
       "help_inline": true,
       "preset": "select_ajax",
       "resource_url": "http://vocabs.ands.org.au/repository/api/sparql/ga_netcdf-ld-example-surface-temperature_v1-0?query=PREFIX%20skos%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3ESELECT%20*%20WHERE%20%7B%3Fs%20a%20skos%3AConcept%20%3Bskos%3AprefLabel%20%3Fpl%20.FILTER%20(lang(%3Fpl)%20%3D%20%22en%22)%7D&Accept=application/sparql-results%2Bjson",
+      "choices": []
+    },
+    {
+      "field_name": "camel",
+      "label": "Camel",
+      "help_text": "Choose a camel.",
+      "help_inline": true,
+      "preset": "select",
       "choices": [
         {
           "value": "bactrian",
