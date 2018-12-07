@@ -8,6 +8,13 @@ from ckantoolkit import config, _
 from ckanapi import LocalCKAN, NotFound, NotAuthorized
 
 
+def split_string(s):
+    """
+    Split the string by whitespace and return it as a list of strings.
+    """
+    ss = s.split(' ')
+    return ss
+
 def lang():
     # access this function late in case ckan
     # is not set up fully when importing this module

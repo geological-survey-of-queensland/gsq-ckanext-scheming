@@ -30,9 +30,24 @@
       "form_placeholder": "http://example.com/my-image.jpg"
     },
     {
-      "field_name": "department_id",
-      "label": "Department ID",
-      "form_placeholder": "e.g. 1042"
+      "field_name": "contact_person",
+      "label": "Contact person",
+      "form_placeholder": "John Smith"
+    },
+    {
+      "field_name": "contact_person_email",
+      "label": "Contact email",
+      "form_placeholder": "bob@example.com"
+    },
+    {
+      "field_name": "contact_phone_no",
+      "label": "Contact phone",
+      "form_placeholder": "+61747382731"
+    },
+    {
+      "field_name": "alternate_org_names",
+      "label": "Alternate organization names",
+      "form_placeholder": "csiro, CSIRO, ..."
     }
   ]
 }

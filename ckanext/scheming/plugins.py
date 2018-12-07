@@ -105,6 +105,7 @@ class _SchemingMixin(object):
             'scheming_datetime_to_tz': helpers.scheming_datetime_to_tz,
             'scheming_datastore_choices': helpers.scheming_datastore_choices,
             'scheming_display_json_value': helpers.scheming_display_json_value,
+            'split_string': helpers.split_string
             }
 
     def get_validators(self):
@@ -212,10 +213,24 @@ class SchemingDatasetsPlugin(p.SingletonPlugin, DefaultDatasetForm,
     p.implements(p.IDatasetForm, inherit=True)
     p.implements(p.IActions)
     p.implements(p.IValidators)
+    # p.implements(p.IFacets)
 
     SCHEMA_OPTION = 'scheming.dataset_schemas'
     FALLBACK_OPTION = 'scheming.dataset_fallback'
     SCHEMA_TYPE_FIELD = 'dataset_type'
+
+    # def organization_facets(self, facets_dict, organization_type, package_type):
+    #     '''Add new search facet (filter) for datasets.
+    #     This must be a field in the dataset (or organization or
+    #     group if you're modifying those search facets, just change the function).
+
+    #     Reference: https://stackoverflow.com/questions/32175329/how-to-add-a-search-filter-facet-option-for-a-custom-field-in-ckan
+    #     '''
+    #     # This keeps the existing facet order.
+    #     facets_dict['contact_person'] = p.toolkit._('Contact person') 
+
+    #     # Return the updated facet dict.
+    #     return facets_dict
 
     @classmethod
     def _store_instance(cls, self):
