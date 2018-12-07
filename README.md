@@ -17,12 +17,13 @@ Modifications
 - Custom JSON schemas modelled for the project's datasets
 - Enhanced form and display snippets 
   - Creator Organization select drop-down field to select an organization from the internal CKAN list
+    - By default, it will automatically select the organization the user is already in (or if they're in multiple organizations, then it will select the first one by alphabetical order)
   - Linking of values to internal CKAN resources (such as Creator Organization value)
   - Select drop-down menu can fetch from online vocabulary source (in JSON format)
   - Updated the simple and generic display template for displaying custom organization schemas
   - Additional pill nav buttons for different datasets like permits, borehole, etc.
   - Enabled auto-completion for select drop-down menus
-    - This is enabled for both the AJAX select and the normal select.
+    - This is enabled for both the AJAX select and the normal select
   
   
 todo

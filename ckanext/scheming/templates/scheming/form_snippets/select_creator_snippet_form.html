@@ -96,9 +96,9 @@ options     - A list/tuple of fields to be used as <options>.
     {% call input_block(id or name, label or name, error, classes, extra_html=extra_html, is_required=is_required) %}
     <select id="{{ id or name }}" name="{{ name }}" {{ attributes(attrs) }}>
       {% for option in options %}
-      {% if loop.index != 1 %}
+      
   <option value="{{ option.value }}"{% if option.value == selected %} selected{% endif %}>{{ option.text or option.value }}</option>
-      {% endif %}
+      
   {% endfor %}
   </select>
   {% endcall %}

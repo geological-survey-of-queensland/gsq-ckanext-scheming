@@ -13,7 +13,7 @@
     field.get('form_include_blank_choice', false) -%}
   {%- do options.append({'value': '', 'text': ''}) -%}
 {%- endif -%}
-{%- for c in h.organizations_available('create_dataset') -%}
+{%- for c in h.get_featured_organizations(count=9999) -%}
   {%- if not form_restrict_choices_to or c.value in form_restrict_choices_to -%}
     {%- do options.append({
       'value': c.id,
@@ -24,6 +24,7 @@
   {%- set options = options|sort(case_sensitive=false, attribute='text') -%}
 {%- endif -%}
 
+{% set selected_org = h.organizations_available('create_dataset')[0] %}
 {% call form.select(
     data,
     field,
@@ -31,10 +32,12 @@
     id='field-' + field.field_name,
     label=h.scheming_language_text(field.label),
     options=options,
-    selected=data[field.field_name],
+    selected=selected_org.id,
     error=errors[field.field_name],
     classes=['control-medium'],
-    attrs=field.form_attrs if 'form_attrs' in field else {"class": "form-control"},
+    attrs=field.form_attrs if 'form_attrs' in field else {
+      "data-module": "autocomplete"
+    },
     is_required=h.scheming_field_required(field)
     )
 %}

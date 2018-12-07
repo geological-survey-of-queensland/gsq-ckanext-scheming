@@ -1,0 +1,157 @@
+{
+  "scheming_version": 1,
+  "dataset_type": "borehole",
+  "about": "Geological Survey of Queensland (GSQ) borehole dataset.",
+  "about_url": "https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq",
+  "dataset_fields": [
+    {
+      "field_name": "title",
+      "label": "Title",
+      "preset": "title",
+      "form_placeholder": "eg. A descriptive title"
+    },
+    {
+      "field_name": "theme",
+      "label": "theme",
+      "form_placeholder": "http://www.google.com",
+      "display_property": "theme",
+      "display_snippet": "link.html"
+    },
+    {
+      "field_name": "creator_org",
+      "label": "Creator Organization",
+      "preset": "select_creator_org"
+    },
+    {
+      "field_name": "term",
+      "label": "Term",
+      "help_text": "Choose a suitable term out of the Sea Surface Temperature vocabulary.",
+      "help_inline": true,
+      "preset": "select_ajax",
+      "resource_url": "http://vocabs.ands.org.au/repository/api/sparql/ga_netcdf-ld-example-surface-temperature_v1-0?query=PREFIX%20skos%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3ESELECT%20*%20WHERE%20%7B%3Fs%20a%20skos%3AConcept%20%3Bskos%3AprefLabel%20%3Fpl%20.FILTER%20(lang(%3Fpl)%20%3D%20%22en%22)%7D&Accept=application/sparql-results%2Bjson",
+      "choices": []
+    },
+    {
+      "field_name": "camel",
+      "label": "Camel",
+      "help_text": "Choose a camel.",
+      "help_inline": true,
+      "preset": "select",
+      "choices": [
+        {
+          "value": "bactrian",
+          "label": "Bactrian Camel"
+        },
+        {
+          "value": "hybrid",
+          "label": "Hybrid Camel"
+        },
+        {
+          "value": "f2hybrid",
+          "label": "F2 Hybrid Camel"
+        },
+        {
+          "value": "snowwhite",
+          "label": "Snow-white Dromedary"
+        },
+        {
+          "value": "black",
+          "label": "Black Camel"
+        }
+      ]
+    },
+    {
+      "field_name": "name",
+      "label": "URL",
+      "preset": "dataset_slug",
+      "form_placeholder": "eg. my-dataset"
+    },
+    {
+      "field_name": "notes",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "eg. Some useful notes about the data"
+    },
+    {
+      "field_name": "tag_string",
+      "label": "Tags",
+      "preset": "tag_string_autocomplete",
+      "form_placeholder": "eg. economy, mental health, government"
+    },
+    {
+      "field_name": "license_id",
+      "label": "License",
+      "form_snippet": "license.html",
+      "help_text": "License definitions and additional information can be found at http://opendefinition.org/"
+    },
+    {
+      "field_name": "owner_org",
+      "label": "Organization",
+      "preset": "dataset_organization"
+    },
+    {
+      "field_name": "url",
+      "label": "Source",
+      "form_placeholder": "http://example.com/dataset.json",
+      "display_property": "foaf:homepage",
+      "display_snippet": "link.html"
+    },
+    {
+      "field_name": "version",
+      "label": "Version",
+      "validators": "ignore_missing unicode package_version_validator",
+      "form_placeholder": "1.0"
+    },
+    {
+      "field_name": "author",
+      "label": "Author",
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:creator"
+    },
+    {
+      "field_name": "author_email",
+      "label": "Author Email",
+      "form_placeholder": "joe@example.com",
+      "display_property": "dc:creator",
+      "display_snippet": "email.html",
+      "display_email_name_field": "author"
+    },
+    {
+      "field_name": "maintainer",
+      "label": "Maintainer",
+      "form_placeholder": "Joe Bloggs",
+      "display_property": "dc:contributor"
+    },
+    {
+      "field_name": "maintainer_email",
+      "label": "Maintainer Email",
+      "form_placeholder": "joe@example.com",
+      "display_property": "dc:contributor",
+      "display_snippet": "email.html",
+      "display_email_name_field": "maintainer"
+    }
+  ],
+  "resource_fields": [
+    {
+      "field_name": "url",
+      "label": "URL",
+      "preset": "resource_url_upload"
+    },
+    {
+      "field_name": "name",
+      "label": "Name",
+      "form_placeholder": "eg. January 2011 Gold Prices"
+    },
+    {
+      "field_name": "description",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "Some useful notes about the data"
+    },
+    {
+      "field_name": "format",
+      "label": "Format",
+      "preset": "resource_format_autocomplete"
+    }
+  ]
+}
