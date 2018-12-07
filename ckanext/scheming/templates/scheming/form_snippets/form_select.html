@@ -106,7 +106,7 @@
                       },
                       dataType: 'json', // specify that we want a response in JSON
                       success: function(data) {
-                        console.log(data);
+                        // console.log(data);
                         items = data['results']['bindings'];
 
                         var options = [];
@@ -115,18 +115,24 @@
                           // console.log(items[property]['pl']['value']);
                           var label = items[property]['pl']['value'];   // prefLabel
                           var value = items[property]['s']['value'];    // subject uri
-                          console.log(`label: ${label} value: ${value}`);
+                          // console.log(`label: ${label} value: ${value}`);
                           options.push([label, value]);
                         }
 
                           var select = document.getElementById("{{ id or name }}"); 
+                          selected_innerHTML = '';
                           for(var i = 0; i < options.length; i++) {
                             var el = document.createElement("option");
                             el.textContent = options[i][0];
                             el.value = options[i][1];
+                            if(el.value === '{{ selected }}') {
+                              // console.log(el.textContent);
+                              selected_innerHTML = el.textContent
+                            }
                             select.appendChild(el);
                           }
                           document.getElementById('{{ id or name }}').value = '{{ selected }}';
+                          document.getElementById('select2-chosen-1').innerHTML = selected_innerHTML;
                       },
                       type: 'GET'
                     })
