@@ -24,11 +24,13 @@ Modifications
   - Additional pill nav buttons for different datasets like permits, borehole, etc.
   - Enabled auto-completion for select drop-down menus
     - This is enabled for both the AJAX select and the normal select
+  - Added latitude and longitude field with a CKAN validator to ensure the values follow the decimal degrees format.
   
   
 todo
 ----
 
+- Add the pill nav button for borehole, seismic and gc.
 - Show organization field information **only** if the value was set. Currently I've only implemented this behaviour for the Alternate organization names.
 - Re-evaluate the deprecated feature for vocabulary values (it will always show the deprecated message because there's no system in place to fetch the vocabulary for the internal JSON schema yet).
 - Attempt to fix the issue where the pill nav buttons are active for anything related to datasets at the same time.
