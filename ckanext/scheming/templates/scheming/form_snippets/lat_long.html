@@ -1,0 +1,34 @@
+{#
+    Edmond Chuc, edmond.chuc@csiro.au
+    
+    Enable a HTML select drop-down list options to be asynchronously fetched from an external resource. 
+#}
+
+{% import 'scheming/form_snippets/lat_long_form.html' as form %}
+
+{%- set options=[] -%}
+
+{%- set form_restrict_choices_to=field.get('form_restrict_choices_to') -%}
+{%- if not h.scheming_field_required(field) or
+    field.get('form_include_blank_choice', false) -%}
+  {%- do options.append({'value': '', 'text': ''}) -%}
+{%- endif -%}
+
+{%- if field.get('sorted_choices') -%}
+  {%- set options = options|sort(case_sensitive=false, attribute='text') -%}
+{%- endif -%}
+
+{% call form.select(
+    field.field_name,
+    id='field-' + field.field_name,
+    label=h.scheming_language_text(field.label),
+    options=options,
+    selected=data[field.field_name],
+    error=errors[field.field_name],
+    classes=['control-medium'],
+    
+    is_required=h.scheming_field_required(field)
+    )
+%}
+    {%- snippet 'scheming/form_snippets/help_text.html', field=field -%}
+{% endcall %}

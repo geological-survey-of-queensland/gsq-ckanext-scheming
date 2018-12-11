@@ -38,6 +38,7 @@ from ckanext.scheming.validation import (
     scheming_isodatetime_tz,
     scheming_valid_json_object,
     scheming_load_json,
+    scheming_lat_long,
 )
 from ckanext.scheming.logic import (
     scheming_dataset_schema_list,
@@ -123,6 +124,7 @@ class _SchemingMixin(object):
             'scheming_isodatetime_tz': scheming_isodatetime_tz,
             'scheming_valid_json_object': scheming_valid_json_object,
             'scheming_load_json': scheming_load_json,
+            'scheming_lat_long': scheming_lat_long,
             }
 
     def _add_template_directory(self, config):

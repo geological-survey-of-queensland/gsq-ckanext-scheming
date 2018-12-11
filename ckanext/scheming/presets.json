@@ -94,6 +94,14 @@
       }
     },
     {
+      "preset_name": "lat_long",
+      "values": {
+        "validators": "scheming_lat_long",
+        "form_snippet": "lat_long.html",
+        "display_snippet": "lat_long.html"
+      }
+    },
+    {
       "preset_name": "multiple_checkbox",
       "values": {
         "form_snippet": "multiple_checkbox.html",
