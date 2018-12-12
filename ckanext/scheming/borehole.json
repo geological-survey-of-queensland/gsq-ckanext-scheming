@@ -25,13 +25,13 @@
       "field_name": "latitude",
       "label": "Latitude",
       "preset": "lat_long",
-      "help_text": "Input value should be formatted as decimal degrees"
+      "help_text": "Input value should be formatted as decimal degrees. For Latitude, please input a value between -90.0 to 90.0"
     },
     {
       "field_name": "longitude",
       "label": "Longitude",
       "preset": "lat_long",
-      "help_text": "Input value should be formatted as decimal degrees"
+      "help_text": "Input value should be formatted as decimal degrees. For Latitude, please input a value between -180.0 to 180.0"
     },
     {
       "field_name": "notes",
