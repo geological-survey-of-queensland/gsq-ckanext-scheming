@@ -30,8 +30,8 @@ Modifications
 todo
 ----
 
-- Add the pill nav button for borehole, seismic and gc.
-- Show organization field information **only** if the value was set. Currently I've only implemented this behaviour for the Alternate organization names.
+- Review current validators for the new fields (such as creator org.) and add any other validators that are relevant.
+- Show organization field information in the organization "display snippet" **only** if the value was set. Currently I've only implemented this behaviour for the Alternate organization names.
 - Re-evaluate the deprecated feature for vocabulary values (it will always show the deprecated message because there's no system in place to fetch the vocabulary for the internal JSON schema yet).
 - Attempt to fix the issue where the pill nav buttons are active for anything related to datasets at the same time.
   - I.e. viewing /dataset also makes /permit nav button active since they're both of type "dataset".
