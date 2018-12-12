@@ -5,8 +5,7 @@ This extension provides a way to configure and share
 CKAN schemas using a JSON schema description. Custom
 template snippets for editing and display are also supported.
 
-[![Circle CI](https://circleci.com/gh/ckan/ckanext-scheming/tree/master.svg?style=svg)](https://circleci.com/gh/ckan/ckanext-scheming/tree/master)
-[![Coverage](https://coveralls.io/repos/ckan/ckanext-scheming/badge.svg?branch=master&service=github)](https://coveralls.io/github/ckan/ckanext-scheming?branch=master)
+
 
 **This extension has been modified to cater for the schema requirements of GSQ datasets at Qld Gov.**
 
@@ -24,12 +23,14 @@ Modifications
   - Additional pill nav buttons for different datasets like permits, borehole, etc.
   - Enabled auto-completion for select drop-down menus
     - This is enabled for both the AJAX select and the normal select
+  - Added latitude and longitude field with a CKAN validator to ensure the values follow the decimal degrees format.
   
   
 todo
 ----
 
-- Show organization field information **only** if the value was set. Currently I've only implemented this behaviour for the Alternate organization names.
+- Review current validators for the new fields (such as creator org.) and add any other validators that are relevant.
+- Show organization field information in the organization "display snippet" **only** if the value was set. Currently I've only implemented this behaviour for the Alternate organization names.
 - Re-evaluate the deprecated feature for vocabulary values (it will always show the deprecated message because there's no system in place to fetch the vocabulary for the internal JSON schema yet).
 - Attempt to fix the issue where the pill nav buttons are active for anything related to datasets at the same time.
   - I.e. viewing /dataset also makes /permit nav button active since they're both of type "dataset".
