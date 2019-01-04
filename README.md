@@ -60,7 +60,7 @@ Set the schemas you want to use with configuration options:
 ckan.plugins = scheming_datasets
 
 #   module-path:file to schemas being used
-scheming.dataset_schemas = ckanext.scheming:ckan_dataset.json ckanext.scheming:permit.json
+scheming.dataset_schemas = ckanext.scheming:ckan_dataset.json ckanext.scheming:permit.json ckanext.scheming:borehole.json
 scheming.organization_schemas = ckanext.scheming:organization.json
 
 #
