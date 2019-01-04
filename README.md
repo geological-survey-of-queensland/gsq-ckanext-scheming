@@ -26,6 +26,7 @@ Modifications
   - Added latitude and longitude field with a CKAN validator to ensure the values follow the decimal degrees format.
   - Added fixed behaviour of viewing **Datasets** will always list datasets that are tagged as *seismic* or *geochemistry*. 
   - The Dataset page will now show *Add Seismic* and *Add Geochemistry* buttons to create new datasets in those categories. 
+  - Creating a new *Seismic* or *Geochemistry* dataset will automatically add a *seismic* or *geochemistry* tag in the background.
   
   
 todo
