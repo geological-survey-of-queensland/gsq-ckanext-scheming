@@ -27,16 +27,16 @@ def scheming_validator(fn):
 @scheming_validator
 def scheming_lat_long(field, schema):
     def validator(value):
-        # raise Invalid(_(field['field_name']))
-        if field['field_name'] == 'latitude':
-            if float(value) < -90.0 or float(value) > 90.0:
-                raise Invalid(_('Invalid latitude coordinates. Must be between the values of -90.0 and 90.0 inclusive.'))
-        elif field['field_name'] == 'longitude':
-            if float(value) < -180.0 or float(value) > 180.0:
-                raise Invalid(_('Invalid longitude coordinates. Must be between the values of -180.0 and 180.0 inclusive.'))
-        else:
-            raise Invalid(_('Invalid field_name'))
-        return value
+        if value != '': # only run validator if value was entered
+            if field['field_name'] == 'latitude':
+                if float(value) < -90.0 or float(value) > 90.0:
+                    raise Invalid(_('Invalid latitude coordinates. Must be between the values of -90.0 and 90.0 inclusive.'))
+            elif field['field_name'] == 'longitude':
+                if float(value) < -180.0 or float(value) > 180.0:
+                    raise Invalid(_('Invalid longitude coordinates. Must be between the values of -180.0 and 180.0 inclusive.'))
+            else:
+                raise Invalid(_('Invalid field_name'))
+            return value
 
     return validator
 

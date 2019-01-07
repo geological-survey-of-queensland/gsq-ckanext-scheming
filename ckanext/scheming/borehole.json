@@ -22,6 +22,15 @@
       "preset": "select_creator_org"
     },
     {
+      "field_name": "concept",
+      "label": "Concept",
+      "help_text": "Choose a suitable term out of the Concept vocabulary.",
+      "help_inline": true,
+      "preset": "select_ajax",
+      "resource_url": "http://13.236.122.60/vocprez/vocabulary/rva-52/concept/?_view=ckan",
+      "choices": []
+    },
+    {
       "field_name": "latitude",
       "label": "Latitude",
       "preset": "lat_long",
