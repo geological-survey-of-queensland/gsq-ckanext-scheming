@@ -24,6 +24,9 @@ Modifications
   - Enabled auto-completion for select drop-down menus
     - This is enabled for both the AJAX select and the normal select
   - Added latitude and longitude field with a CKAN validator to ensure the values follow the decimal degrees format.
+  - Added fixed behaviour of viewing **Datasets** will always list datasets that are tagged as *seismic* or *geochemistry*. 
+  - The Dataset page will now show *Add Seismic* and *Add Geochemistry* buttons to create new datasets in those categories. 
+  - Creating a new *Seismic* or *Geochemistry* dataset will automatically add a *seismic* or *geochemistry* tag in the background.
   
   
 todo
@@ -31,9 +34,8 @@ todo
 
 - Review current validators for the new fields (such as creator org.) and add any other validators that are relevant.
 - Show organization field information in the organization "display snippet" **only** if the value was set. Currently I've only implemented this behaviour for the Alternate organization names.
-- Re-evaluate the deprecated feature for vocabulary values (it will always show the deprecated message because there's no system in place to fetch the vocabulary for the internal JSON schema yet).
-- Attempt to fix the issue where the pill nav buttons are active for anything related to datasets at the same time.
-  - I.e. viewing /dataset also makes /permit nav button active since they're both of type "dataset".
+- Re-evaluate the *deprecated feature* for vocabulary values (it will always show the deprecated message because there's no system in place to fetch the vocabulary for the internal JSON schema yet) in the display snippet.
+- The pill navigation buttons for datasets do not change its class to **active** as it's currently not handled by CKAN, rather it is displayed directly using HTML.
 
 
 Contact
