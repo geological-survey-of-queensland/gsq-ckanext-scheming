@@ -39,35 +39,6 @@
       "choices": []
     },
     {
-      "field_name": "camel",
-      "label": "Camel",
-      "help_text": "Choose a camel.",
-      "help_inline": true,
-      "preset": "select",
-      "choices": [
-        {
-          "value": "bactrian",
-          "label": "Bactrian Camel"
-        },
-        {
-          "value": "hybrid",
-          "label": "Hybrid Camel"
-        },
-        {
-          "value": "f2hybrid",
-          "label": "F2 Hybrid Camel"
-        },
-        {
-          "value": "snowwhite",
-          "label": "Snow-white Dromedary"
-        },
-        {
-          "value": "black",
-          "label": "Black Camel"
-        }
-      ]
-    },
-    {
       "field_name": "name",
       "label": "URL",
       "preset": "dataset_slug",
