@@ -27,17 +27,7 @@
       "label": "Creator (Organisation or Person)",
       "preset": "select_creator_org",
       "display_property": "dc:creator"
-    },
-    {
-      "field_name": "publisher",
-      "label": "Publisher (Organisation or Person)",
-      "preset": "select_creator_org"
-    },
-    {
-      "field_name": "contactpoint",
-      "label": "Contact Point (Organisation or Person)",
-      "preset": "select_creator_org"
-    },       
+    },     
     {
       "field_name": "for",
       "label": "Field of Research",
@@ -52,12 +42,6 @@
       "label": "URL",
       "preset": "dataset_slug",
       "form_placeholder": "eg. my-dataset"
-    },
-    {
-      "field_name": "tag_string",
-      "label": "Tags",
-      "preset": "tag_string_autocomplete",
-      "form_placeholder": "eg. economy, mental health, government"
     },
     {
       "field_name": "license_id",
