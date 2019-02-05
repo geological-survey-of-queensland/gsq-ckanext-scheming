@@ -1,14 +1,11 @@
-ckanext-scheming
+GSQ ckanext-scheming
 ================
 
-This extension provides a way to configure and share
-CKAN schemas using a JSON schema description. Custom
+This extension to the [CKAN](https://ckan.org) system provides a way to configure and share
+CKAN schemas for objects within CKAN (Datasets, etc.) using a JSON schema description of them. Custom
 template snippets for editing and display are also supported.
 
-
-
-**This extension has been modified to cater for the schema requirements of GSQ datasets at Qld Gov.**
-
+This instance of the scheming extension is configured for the [Geological Survey of Queensland](https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq)'s particular use.
 
 Modifications
 -------------
@@ -36,6 +33,12 @@ todo
 - Show organization field information in the organization "display snippet" **only** if the value was set. Currently I've only implemented this behaviour for the Alternate organization names.
 - Re-evaluate the *deprecated feature* for vocabulary values (it will always show the deprecated message because there's no system in place to fetch the vocabulary for the internal JSON schema yet) in the display snippet.
 - The pill navigation buttons for datasets do not change its class to **active** as it's currently not handled by CKAN, rather it is displayed directly using HTML.
+
+
+License
+=======
+
+This CKAN extension is licensed using the affero [GPL v3 license](https://www.gnu.org/licenses/agpl-3.0.html), as all CKAN extensions are required to be. See the [license deed](LICENSE) for more information.
 
 
 Contact
