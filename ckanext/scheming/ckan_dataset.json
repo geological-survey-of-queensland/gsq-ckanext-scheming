@@ -11,27 +11,36 @@
       "form_placeholder": "eg. A descriptive title"
     },
     {
-      "field_name": "url",
-      "label": "Source",
-      "form_placeholder": "http://example.com/dataset.json",
-      "display_property": "foaf:homepage",
-      "display_snippet": "link.html"
+      "field_name": "notes",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "An extended description about or abstract for the data"
     },
     {
-      "field_name": "theme",
-      "label": "theme",
-      "form_placeholder": "http://www.google.com",
-      "display_property": "theme",
-      "display_snippet": "link.html"
+      "field_name": "issued",
+      "label": "Date Issued",
+      "preset": "issued",
+      "form_placeholder": "The date this dataset is/was released"
     },
     {
-      "field_name": "creator_org",
-      "label": "Creator Organization",
+      "field_name": "creator",
+      "label": "Creator (Organisation or Person)",
+      "preset": "select_creator_org",
+      "display_property": "dc:creator"
+    },
+    {
+      "field_name": "publisher",
+      "label": "Publisher (Organisation or Person)",
       "preset": "select_creator_org"
     },
     {
+      "field_name": "contactpoint",
+      "label": "Contact Point (Organisation or Person)",
+      "preset": "select_creator_org"
+    },       
+    {
       "field_name": "for",
-      "label": "Filed of Research",
+      "label": "Field of Research",
       "help_text": "Choose a suitable ANZRC Field of Research term.",
       "help_inline": true,
       "preset": "select_ajax",
@@ -43,12 +52,6 @@
       "label": "URL",
       "preset": "dataset_slug",
       "form_placeholder": "eg. my-dataset"
-    },
-    {
-      "field_name": "notes",
-      "label": "Description",
-      "form_snippet": "markdown.html",
-      "form_placeholder": "eg. Some useful notes about the data"
     },
     {
       "field_name": "tag_string",
@@ -63,23 +66,6 @@
       "help_text": "License definitions and additional information can be found at http://opendefinition.org/"
     },
     {
-      "field_name": "owner_org",
-      "label": "Organization",
-      "preset": "dataset_organization"
-    },
-    {
-      "field_name": "version",
-      "label": "Version",
-      "validators": "ignore_missing unicode package_version_validator",
-      "form_placeholder": "1.0"
-    },
-    {
-      "field_name": "author",
-      "label": "Author",
-      "form_placeholder": "Joe Bloggs",
-      "display_property": "dc:creator"
-    },
-    {
       "field_name": "author_email",
       "label": "Author Email",
       "form_placeholder": "joe@example.com",
@@ -87,20 +73,6 @@
       "display_snippet": "email.html",
       "display_email_name_field": "author"
     },
-    {
-      "field_name": "maintainer",
-      "label": "Maintainer",
-      "form_placeholder": "Joe Bloggs",
-      "display_property": "dc:contributor"
-    },
-    {
-      "field_name": "maintainer_email",
-      "label": "Maintainer Email",
-      "form_placeholder": "joe@example.com",
-      "display_property": "dc:contributor",
-      "display_snippet": "email.html",
-      "display_email_name_field": "maintainer"
-    }
   ],
   "resource_fields": [
     {
