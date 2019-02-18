@@ -6,28 +6,34 @@
   "dataset_fields": [
     {
       "field_name": "title",
-      "label": "Title",
+      "label": "Dataset Title",
       "preset": "title",
       "form_placeholder": "eg. A descriptive title"
+    },
+    {
+      "field_name": "name",
+      "label": "URL",
+      "preset": "dataset_slug",
+      "form_placeholder": "eg. my-dataset"
     },
     {
       "field_name": "notes",
       "label": "Description",
       "form_snippet": "markdown.html",
-      "form_placeholder": "An extended description about or abstract for the data"
+      "form_placeholder": "eg. Some useful notes about the data"
     },
     {
-      "field_name": "issued",
-      "label": "Date Issued",
-      "preset": "issued",
-      "form_placeholder": "The date this dataset is/was released"
-    },
-    {
-      "field_name": "creator",
-      "label": "Creator (Organisation or Person)",
+      "field_name": "creator_org",
+      "label": "Creator",
       "preset": "select_creator_org",
-      "display_property": "dc:creator"
-    },     
+      "help_text": "Choose from registered organisations"
+    },
+    {
+      "field_name": "owner_org",
+      "label": "Publisher",
+      "preset": "dataset_organization",
+      "help_text": "Choose from registered organisations"
+    },
     {
       "field_name": "for",
       "label": "Field of Research",
@@ -38,25 +44,18 @@
       "choices": []
     },
     {
-      "field_name": "name",
-      "label": "URL",
-      "preset": "dataset_slug",
-      "form_placeholder": "eg. my-dataset"
+      "field_name": "tag_string",
+      "label": "Tags",
+      "preset": "tag_string_autocomplete",
+      "form_placeholder": "eg. petroleum, Project X, Company Y",
+      "help_text": "Tag this dataset with additional keywords only when vocabulary classifiers are not available"
     },
     {
       "field_name": "license_id",
       "label": "License",
       "form_snippet": "license.html",
       "help_text": "License definitions and additional information can be found at http://opendefinition.org/"
-    },
-    {
-      "field_name": "author_email",
-      "label": "Author Email",
-      "form_placeholder": "joe@example.com",
-      "display_property": "dc:creator",
-      "display_snippet": "email.html",
-      "display_email_name_field": "author"
-    },
+    }
   ],
   "resource_fields": [
     {
@@ -82,3 +81,4 @@
     }
   ]
 }
+
