@@ -33,7 +33,7 @@ Modifications
   - Creating a new *Seismic* or *Geochemistry* dataset will automatically add a *seismic* or *geochemistry* tag in the background (in form_snippets/large_text.html).
 - Updated theme to GSQ theme.
 - Added *Home* nav bar pill button.
-- Added *Add Dataset* button to the :code:`/dataset` page.
+- Added *Add Dataset* button to the `/dataset` page.
 - New *Dataset* creations now attach a *dataset* tag. This is the same behaviour as *Seismic* and *Geochemistry*.
   
   
