@@ -36,6 +36,8 @@ Modifications
 - Added *Add Dataset* button to the `/dataset` page.
 - New *Dataset* creations now attach a *dataset* tag. This is the same behaviour as *Seismic* and *Geochemistry*.
 - Added new dataset schema **Report**. Nav bar pill also added.
+- Removed the Groups pill nav button.
+- Added Qld Gov favicon.
   
 todo
 ----
@@ -44,6 +46,8 @@ todo
 - Show organization field information in the organization "display snippet" **only** if the value was set. Currently I've only implemented this behaviour for the Alternate organization names.
 - Re-evaluate the *deprecated feature* for vocabulary values (it will always show the deprecated message because there's no system in place to fetch the vocabulary for the internal JSON schema yet) in the display snippet.
 - The pill navigation buttons for datasets do not change its class to **active** as it's currently not handled by CKAN, rather it is displayed directly using HTML.
+- The HTML title for each of the custom Dataset types like Boreholes, Permits, etc are rendering as **Datasets**.
+- DCAT exporter only works on datasets of type **Dataset**. Currently it does not work for other custom datasets such as Boreholes, etc.
 
 
 License
