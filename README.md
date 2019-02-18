@@ -35,7 +35,7 @@ Modifications
 - Added *Home* nav bar pill button.
 - Added *Add Dataset* button to the `/dataset` page.
 - New *Dataset* creations now attach a *dataset* tag. This is the same behaviour as *Seismic* and *Geochemistry*.
-  
+- Added new dataset schema **Report**. Nav bar pill also added.
   
 todo
 ----
