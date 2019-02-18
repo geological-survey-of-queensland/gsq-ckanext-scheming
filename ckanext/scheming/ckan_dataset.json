@@ -6,7 +6,7 @@
   "dataset_fields": [
     {
       "field_name": "title",
-      "label": "Title",
+      "label": "Dataset Title",
       "preset": "title",
       "form_placeholder": "eg. A descriptive title"
     },
@@ -78,12 +78,6 @@
       "label": "Description",
       "form_snippet": "markdown.html",
       "form_placeholder": "eg. Some useful notes about the data"
-    },
-    {
-      "field_name": "tag_string",
-      "label": "Tags",
-      "preset": "tag_string_autocomplete",
-      "form_placeholder": "eg. economy, mental health, government"
     },
     {
       "field_name": "license_id",
