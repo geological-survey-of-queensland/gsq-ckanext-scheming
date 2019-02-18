@@ -5,7 +5,14 @@ This extension to the [CKAN](https://ckan.org) system provides a way to configur
 CKAN schemas for objects within CKAN (Datasets, etc.) using a JSON schema description of them. Custom
 template snippets for editing and display are also supported.
 
+Note: Some custom view functionality like the nav bar rendering is done in the https://github.com/CSIRO-enviro-informatics/gsq-ckanext-gsq-theme repository.
+
+
+
+**This extension has been modified to cater for the schema requirements of GSQ datasets at Qld Gov.**
+
 This instance of the scheming extension is configured for the [Geological Survey of Queensland](https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq)'s particular use.
+
 
 Modifications
 -------------
@@ -23,7 +30,11 @@ Modifications
   - Added latitude and longitude field with a CKAN validator to ensure the values follow the decimal degrees format.
   - Added fixed behaviour of viewing **Datasets** will always list datasets that are tagged as *seismic* or *geochemistry*. 
   - The Dataset page will now show *Add Seismic* and *Add Geochemistry* buttons to create new datasets in those categories. 
-  - Creating a new *Seismic* or *Geochemistry* dataset will automatically add a *seismic* or *geochemistry* tag in the background.
+  - Creating a new *Seismic* or *Geochemistry* dataset will automatically add a *seismic* or *geochemistry* tag in the background (in form_snippets/large_text.html).
+- Updated theme to GSQ theme.
+- Added *Home* nav bar pill button.
+- Added *Add Dataset* button to the :code:`/dataset` page.
+- New *Dataset* creations now attach a *dataset* tag. This is the same behaviour as *Seismic* and *Geochemistry*.
   
   
 todo

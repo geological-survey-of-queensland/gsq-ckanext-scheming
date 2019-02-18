@@ -51,6 +51,12 @@
       "help_text": "Tag this dataset with additional keywords only when vocabulary classifiers are not available"
     },
     {
+      "field_name": "notes",
+      "label": "Description",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "eg. Some useful notes about the data"
+    },
+    {
       "field_name": "license_id",
       "label": "License",
       "form_snippet": "license.html",

@@ -1,6 +1,9 @@
 {% import 'macros/form.html' as form %}
 
-{% if field.label == "Seismic Title" %}
+{% if field.label == "Dataset Title" %}
+     {{ field.label }}
+    <input type="hidden" name="tag_string" value="dataset">
+{% elif field.label == "Seismic Title" %}
     <input type="hidden" name="tag_string" value="seismic">
 {% elif field.label == "Geochemistry Title" %}
     <input type="hidden" name="tag_string" value="geochemistry">
