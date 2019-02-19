@@ -8,7 +8,8 @@
       "field_name": "title",
       "label": "Title",
       "preset": "title",
-      "form_placeholder": "eg. A descriptive title"
+      "form_placeholder": "eg. A descriptive title",
+      "validators": "not_empty"
     },
     {
       "field_name": "name",
@@ -17,94 +18,278 @@
       "form_placeholder": "eg. my-dataset"
     },
     {
+      "field_name": "date_of_drilling",
+      "label": "Date of Drilling",
+      "preset": "date",
+      "validators": "not_empty"
+    },
+    {
       "field_name": "creator_org",
-      "label": "Creator Organization",
+      "label": "Driller Organization",
       "preset": "select_creator_org"
     },
     {
-      "field_name": "concept",
-      "label": "Concept",
-      "help_text": "Choose a suitable term out of the Concept vocabulary.",
-      "help_inline": true,
-      "preset": "select_ajax",
-      "resource_url": "http://13.236.122.60/vocprez/vocabulary/rva-52/concept/?_view=ckan",
-      "choices": []
-    },
-    {
-      "field_name": "latitude",
-      "label": "Latitude",
-      "preset": "lat_long",
-      "help_text": "Input value should be formatted as decimal degrees. For Latitude, please input a value between -90.0 to 90.0"
-    },
-    {
-      "field_name": "longitude",
-      "label": "Longitude",
-      "preset": "lat_long",
-      "help_text": "Input value should be formatted as decimal degrees. For Latitude, please input a value between -180.0 to 180.0"
-    },
-    {
-      "field_name": "notes",
-      "label": "Description",
-      "form_snippet": "markdown.html",
-      "form_placeholder": "eg. Some useful notes about the data"
-    },
-    {
-      "field_name": "tag_string",
-      "label": "Tags",
-      "preset": "tag_string_autocomplete",
-      "form_placeholder": "eg. economy, mental health, government"
-    },
-    {
-      "field_name": "license_id",
-      "label": "License",
-      "form_snippet": "license.html",
-      "help_text": "License definitions and additional information can be found at http://opendefinition.org/"
-    },
-    {
       "field_name": "owner_org",
-      "label": "Organization",
+      "label": "Operator Organization",
       "preset": "dataset_organization"
     },
     {
-      "field_name": "url",
-      "label": "Source",
-      "form_placeholder": "http://example.com/dataset.json",
+      "field_name": "vertical_datum",
+      "label": "Vertical Datum",
+      "validators": "not_empty",
+      "form_placeholder": "http://epsg.io/5111-datum",
       "display_property": "foaf:homepage",
       "display_snippet": "link.html"
     },
     {
-      "field_name": "version",
-      "label": "Version",
-      "validators": "ignore_missing unicode package_version_validator",
-      "form_placeholder": "1.0"
+      "field_name": "has_top",
+      "label": "Has Top (in meters above sea level)",
+      "validators": "not_empty",
+      "form_placeholder": "A numerical value"
     },
     {
-      "field_name": "author",
-      "label": "Author",
-      "form_placeholder": "Joe Bloggs",
-      "display_property": "dc:creator"
+      "field_name": "has_base",
+      "label": "Has Base (in meters above sea level)",
+      "validators": "",
+      "form_placeholder": "A numerical value"
     },
     {
-      "field_name": "author_email",
-      "label": "Author Email",
-      "form_placeholder": "joe@example.com",
-      "display_property": "dc:creator",
-      "display_snippet": "email.html",
-      "display_email_name_field": "author"
+      "field_name": "diameter",
+      "label": "Diameter (in meters)",
+      "validators": "",
+      "form_placeholder": "A numerical value"
     },
     {
-      "field_name": "maintainer",
-      "label": "Maintainer",
-      "form_placeholder": "Joe Bloggs",
-      "display_property": "dc:contributor"
+      "field_name": "has_geometry",
+      "label": "Geometry",
+      "validators": "",
+      "form_snippet": "markdown.html",
+      "form_placeholder": "GEOMETRY THING URI POLYGON(x1,y1 x2,y2 ... )"
     },
     {
-      "field_name": "maintainer_email",
-      "label": "Maintainer Email",
-      "form_placeholder": "joe@example.com",
-      "display_property": "dc:contributor",
-      "display_snippet": "email.html",
-      "display_email_name_field": "maintainer"
+      "field_name": "drilling_method",
+      "label": "Drilling Method",
+      "help_text": "Drilling method",
+      "help_inline": true,
+      "preset": "select",
+      "choices": [
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Air_Core_Drilling",
+          "label": "Air Core Drilling"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Auger_Drilling",
+          "label": "Auger Drilling"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Blades_Drilling",
+          "label": "Blades Drilling"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Diamond_Drilling",
+          "label": "Diamond Drilling"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Hammer_Drilling",
+          "label": "Hammer Drilling"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Percussion_Drilling",
+          "label": "Percussion Drilling"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Polycrystalline_Diamond_Drilling",
+          "label": "Polycrystalline Diamond Drilling"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Reverse_Circulation_Percussion_Drilling",
+          "label": "Reverse Circulation Percussion Drilling"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Rock_Roller-Tricone_Drilling",
+          "label": "Rock Roller/Tricone Drilling"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Rotary_Air_Blow_Drilling",
+          "label": "Rotary Air Blow Drilling"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Rotary_Drilling",
+          "label": "Rotary Drilling"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Under_Reamer_Drilling",
+          "label": "Under Reamer Drilling"
+        }
+      ]
+    },
+    {
+      "field_name": "inclination",
+      "label": "Inclination",
+      "help_text": "Inclination",
+      "help_inline": true,
+      "preset": "select",
+      "choices": [
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq/borehole-inclination#vertical",
+          "label": "Vertical"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq/borehole-inclination#horizontal",
+          "label": "Horizontal"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq/borehole-inclination#inclined-up",
+          "label": "Inclined-up"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq/borehole-inclination#inclined-down",
+          "label": "Inclined-down"
+        }
+      ]
+    },
+    {
+      "field_name": "purpose",
+      "label": "Purpose",
+      "help_text": "Purpose",
+      "help_inline": true,
+      "preset": "select",
+      "choices": [
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#greenhouse_gas_storage",
+          "label": "Greenhouse Gas Storage"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#petroleum",
+          "label": "Petroleum"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#water",
+          "label": "Water"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#stratigraphic",
+          "label": "Stratigraphic"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#mineral",
+          "label": "Mineral"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#coal",
+          "label": "Coal"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#coal_seam_gas",
+          "label": "Coal Seam Gas"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#supply_bore",
+          "label": "Supply Bore"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#appraisal_well",
+          "label": "Appraisal Well"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#collaborative_initiative_drilling_well",
+          "label": "Collaborative Initiative Drilling Well"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#collaborative_drilling_borehole",
+          "label": "Collaborative Drilling Borehole"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#development_well",
+          "label": "Development Well"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#exploration_well",
+          "label": "Exploration Well"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#exploration_borehole",
+          "label": "Exploration Borehole"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#gas_content_borehole",
+          "label": "Gas Content Borehole"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#geotechnical_borehole",
+          "label": "Geotechnical Borehole"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#coal_seam_gas_injection_well",
+          "label": "Coal Seam Gas Injection Well"
+        }
+      ]
+    },
+    {
+      "field_name": "start_type",
+      "label": "Start Type",
+      "help_text": "gsml:StartPoint",
+      "help_inline": true,
+      "preset": "select",
+      "choices": [
+        {
+          "value": "natural_ground_surface",
+          "label": "Natural Ground Surface"
+        },
+        {
+          "value": "open_pit_floor_or_wall",
+          "label": "Open Pit Floor or Wall"
+        },
+        {
+          "value": "underground",
+          "label": "Underground"
+        },
+        {
+          "value": "from_pre-existing_hole",
+          "label": "From Pre-existing Hole"
+        }
+      ]
+    },
+    {
+      "field_name": "borehole_status",
+      "label": "Borehole Status",
+      "help_text": "Borehole status",
+      "help_inline": true,
+      "preset": "select",
+      "choices": [
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-borehole-status#injecting",
+          "label": "Injecting"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-borehole-status#never_drilled",
+          "label": "Never Drilled"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-borehole-status#plugged_and_abandoned",
+          "label": "Plugged and Abandoned"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-borehole-status#producing_hydrocarbons",
+          "label": "Producing Hydrocarbons"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-borehole-status#propsed_to_be_drilled",
+          "label": "Proposed to be Drilled"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-borehole-status#suspended_capped_or_shut-in",
+          "label": "Suspended, Capped or Shut-in"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-borehole-status#unknown",
+          "label": "Unknown"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/def/gsq-borehole-status#water_bore",
+          "label": "Water Bore"
+        }
+      ]
     }
   ],
   "resource_fields": [
