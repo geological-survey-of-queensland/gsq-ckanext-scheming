@@ -44,7 +44,6 @@
       "label": "Vertical Datum",
       "validators": "not_empty",
       "form_placeholder": "http://epsg.io/5111-datum",
-      "display_property": "foaf:homepage",
       "display_snippet": "link.html"
     },
     {
