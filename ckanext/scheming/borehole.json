@@ -296,6 +296,13 @@
           "label": "Water Bore"
         }
       ]
+    },
+    {
+      "field_name": "contact_point",
+      "label": "Contact Point",
+      "form_placeholder": "joe@example.com",
+      "display_snippet": "email.html",
+      "display_email_name_field": "contact point"
     }
   ],
   "resource_fields": [
