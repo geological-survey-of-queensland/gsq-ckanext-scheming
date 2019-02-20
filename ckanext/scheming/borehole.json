@@ -238,27 +238,27 @@
       "preset": "select",
       "choices": [
         {
-          "value": "natural_ground_surface",
+          "value": "http://test.linked.data.gov.au/def/gsq-borehole-start-type#natural_ground_surface",
           "label": "Natural Ground Surface"
         },
         {
-          "value": "open_pit_floor_or_wall",
+          "value": "http://test.linked.data.gov.au/def/gsq-borehole-start-type#open_pit_floor_or_wall",
           "label": "Open Pit Floor or Wall"
         },
         {
-          "value": "underground",
+          "value": "http://test.linked.data.gov.au/def/gsq-borehole-start-type#underground",
           "label": "Underground"
         },
         {
-          "value": "from_pre-existing_hole",
+          "value": "http://test.linked.data.gov.au/def/gsq-borehole-start-type#from_pre-existing_hole",
           "label": "From Pre-existing Hole"
         }
       ]
     },
     {
-      "field_name": "borehole_status",
-      "label": "Borehole Status",
-      "help_text": "Borehole status",
+      "field_name": "status",
+      "label": "Status",
+      "help_text": "Status",
       "help_inline": true,
       "preset": "select",
       "choices": [
