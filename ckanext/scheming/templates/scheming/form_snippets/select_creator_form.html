@@ -24,7 +24,10 @@
   {%- set options = options|sort(case_sensitive=false, attribute='text') -%}
 {%- endif -%}
 
-{% set selected_org = h.get_organization(data['creator_org']) %}
+{% set selected_org = h.get_organization(data.get('creator_org')) %}
+{% if selected_org == {} %}
+  {% set selected_org = h.organizations_available('create_dataset')[0] %}
+{% endif %}
 
 {% call form.select(
     data,
