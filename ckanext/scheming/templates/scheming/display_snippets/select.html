@@ -1,3 +1,9 @@
-{{ h.scheming_choices_label(
+{# If this field's value is a URI, then hyperlink it. Otherwise just display plain text. #}
+
+{% if data[field.field_name][:7] == 'http://' %}
+	<a href="{{ data[field.field_name] }}">{{ h.scheming_choices_label(h.scheming_field_choices(field), data[field.field_name]) }}</a>
+{% else %}
+	{{ h.scheming_choices_label(
   h.scheming_field_choices(field),
   data[field.field_name]) }}
+{% endif %}
