@@ -5,79 +5,58 @@
   "about_url": "https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq",
   "dataset_fields": [
     {
+      "field_name": "creator",
+      "label": "Creator",
+      "preset": "select_creator_org"
+    },
+    {
+      "field_name": "publisher",
+      "label": "Publisher",
+      "preset": "select_creator_org"
+    },
+    {
       "field_name": "title",
-      "label": "Seismic Title",
+      "label": "Title",
       "preset": "title",
-      "form_placeholder": "eg. A descriptive title"
+      "form_placeholder": "A descriptive title",
+      "required": "true"
     },
     {
       "field_name": "name",
       "label": "URL",
       "preset": "dataset_slug",
-      "form_placeholder": "eg. my-dataset"
+      "form_placeholder": "A short slug for the dataset, based on the title"
     },
     {
-      "field_name": "creator_org",
-      "label": "Creator Organization",
-      "preset": "select_creator_org"
-    },
-    {
-      "field_name": "notes",
+      "field_name": "description",
       "label": "Description",
       "form_snippet": "markdown.html",
-      "form_placeholder": "eg. Some useful notes about the data"
+      "form_placeholder": "A description of this dataset's data",
+      "required": "true"
     },
     {
-      "field_name": "license_id",
-      "label": "License",
-      "form_snippet": "license.html",
-      "help_text": "License definitions and additional information can be found at http://opendefinition.org/"
+      "field_name": "isAResultOf",
+      "label": "Is a result of",
+      "form_placeholder": "The title of the Seismic Survey that generated this dataset",
+      "required": "true"
     },
     {
-      "field_name": "owner_org",
-      "label": "Organization",
-      "preset": "dataset_organization"
+      "field_name": "start",
+      "label": "Start Date",
+      "preset": "date",
+      "form_placeholder": "The start date of the data generation"
     },
     {
-      "field_name": "url",
-      "label": "Source",
-      "form_placeholder": "http://example.com/dataset.json",
-      "display_property": "foaf:homepage",
-      "display_snippet": "link.html"
+      "field_name": "end",
+      "label": "End Date",
+      "preset": "date",
+      "form_placeholder": "The end date of the data generation"
     },
     {
-      "field_name": "version",
-      "label": "Version",
-      "validators": "ignore_missing unicode package_version_validator",
-      "form_placeholder": "1.0"
-    },
-    {
-      "field_name": "author",
-      "label": "Author",
-      "form_placeholder": "Joe Bloggs",
-      "display_property": "dc:creator"
-    },
-    {
-      "field_name": "author_email",
-      "label": "Author Email",
-      "form_placeholder": "joe@example.com",
-      "display_property": "dc:creator",
-      "display_snippet": "email.html",
-      "display_email_name_field": "author"
-    },
-    {
-      "field_name": "maintainer",
-      "label": "Maintainer",
-      "form_placeholder": "Joe Bloggs",
-      "display_property": "dc:contributor"
-    },
-    {
-      "field_name": "maintainer_email",
-      "label": "Maintainer Email",
-      "form_placeholder": "joe@example.com",
-      "display_property": "dc:contributor",
-      "display_snippet": "email.html",
-      "display_email_name_field": "maintainer"
+      "field_name": "ultimateFeatureOfInterest",
+      "label": "Ultimate Feature of Interest",
+      "form_placeholder": "The finest-grain FoI this dataset is about. Best: 'Such 'n Such Outcrop'. Worst: 'Earth's Crust'",
+      "required": "true"
     }
   ],
   "resource_fields": [
