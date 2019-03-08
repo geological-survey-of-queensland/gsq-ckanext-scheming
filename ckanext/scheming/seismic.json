@@ -15,6 +15,13 @@
       "preset": "select_creator_org"
     },
     {
+      "field_name": "maintainer",
+      "label": "Contact Person",
+      "form_placeholder": "A GSQ staff member",
+      "display_property": "dc:contributor",
+      "required": "true"
+    },
+    {
       "field_name": "title",
       "label": "Title",
       "preset": "title",
