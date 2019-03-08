@@ -10,7 +10,7 @@
       "preset": "select_creator_org"
     },
     {
-      "field_name": "publisher",
+      "field_name": "owner_org",
       "label": "Publisher",
       "preset": "select_creator_org"
     },
@@ -28,7 +28,7 @@
       "form_placeholder": "A short slug for the dataset, based on the title"
     },
     {
-      "field_name": "description",
+      "field_name": "notes",
       "label": "Description",
       "form_snippet": "markdown.html",
       "form_placeholder": "A description of this dataset's data",
