@@ -1,7 +1,7 @@
 {
   "scheming_version": 1,
   "dataset_type": "seismic",
-  "about": "Geological Survey of Queensland (GSQ) seismic sub-dataset.",
+  "about": "Geological Survey of Queensland (GSQ) seismic survey profile.",
   "about_url": "https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq",
   "dataset_fields": [
     {
@@ -23,47 +23,91 @@
     },
     {
       "field_name": "title",
-      "label": "Title",
+      "label": "Survey Title",
       "preset": "title",
-      "form_placeholder": "A descriptive title",
+      "form_placeholder": "The title of the seismic survey",
+      "required": "true"
+    },
+    {
+      "field_name": "survey_number",
+      "label": "Survey Number",
+      "form_placeholder": "e.g. 123789",
       "required": "true"
     },
     {
       "field_name": "name",
-      "label": "URL",
+      "label": "Enter Survey Number",
       "preset": "dataset_slug",
-      "form_placeholder": "A short slug for the dataset, based on the title"
+      "form_placeholder": "Enter seismic survey number",
+      "required": "true"
     },
     {
       "field_name": "notes",
-      "label": "Description",
+      "label": "Survey Description",
       "form_snippet": "markdown.html",
-      "form_placeholder": "A description of this dataset's data",
+      "form_placeholder": "A description of the seismic survey",
       "required": "true"
     },
     {
-      "field_name": "isAResultOf",
-      "label": "Is a result of",
-      "form_placeholder": "The title of the Seismic Survey that generated this dataset",
-      "required": "true"
+      "field_name": "permit",
+      "label": "Permit Number",
+      "form_placeholder": "e.g. ATP123"
     },
+    {
+      "field_name": "acquisition_operator",
+      "label": "Acquisition Operator",
+      "preset": "title",
+      "form_placeholder": "The name of the acquisition operator"
+    }, 
     {
       "field_name": "start",
-      "label": "Start Date",
+      "label": "Survey Start Date",
       "preset": "date",
-      "form_placeholder": "The start date of the data generation"
+      "form_placeholder": "The start date of the seismic survey"
     },
     {
       "field_name": "end",
-      "label": "End Date",
+      "label": "Survey End Date",
       "preset": "date",
-      "form_placeholder": "The end date of the data generation"
+      "form_placeholder": "The end date of the seismic survey"
     },
     {
-      "field_name": "ultimateFeatureOfInterest",
-      "label": "Ultimate Feature of Interest",
-      "form_placeholder": "The finest-grain FoI this dataset is about. Best: 'Such 'n Such Outcrop'. Worst: 'Earth's Crust'",
-      "required": "true"
+      "field_name": "seismic_sampling_method",
+      "label": "Seismic Sampling Method",
+      "preset": "select_ajax",
+      "resource_url": "http://graphdb.gsq.digital:7200/repositories/GSQ_Vocabularies_core?query=PREFIX+skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs+a+skos%3AConcept%3Bskos%3AprefLabel+%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Ftest.linked.data.gov.au%2Fdef%2Fgsq%2Fseismic-sampling-method%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
+      "choices": []
+    },
+    {
+      "field_name": "seismic_survey_dimensionality",
+      "label": "Seismic Survey Dimensionality",
+      "preset": "select_ajax",
+      "resource_url": "http://graphdb.gsq.digital:7200/repositories/GSQ_Vocabularies_core?query=PREFIX+skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs+a+skos%3AConcept%3Bskos%3AprefLabel%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Ftest.linked.data.gov.au%2Fdef%2Fgsq%2Fseismic-survey-dimensionality%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
+      "choices": []
+    },
+    {
+      "field_name": "seismic_survey_status",
+      "label": "Seismic Survey Status",
+      "preset": "select_ajax",
+      "resource_url": "http://graphdb.gsq.digital:7200/repositories/GSQ_Vocabularies_core?query=PREFIX+skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs+a+skos%3AConcept+%3Bskos%3AprefLabel+%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Ftest.linked.data.gov.au%2Fdef%2Fgsq%2Fsurvey-status%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
+      "choices": []
+    },
+    {
+      "field_name": "feature_of_interest",
+      "label": "Feature of Interest",
+      "form_placeholder": "The finest-grain FoI this dataset is about. Best: 'Such 'n Such Outcrop'. Worst: 'Earth's Crust'"
+    },
+    {
+      "field_name": "GeoJSONextent",
+      "label": "Survey Extents in GeoJSON",
+      "form_placeholder": "Example: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000],[142.500000, -27.000000],[142.500000, -31.000000] ] ] }"
+    },
+    {
+      "field_name": "access_rights",
+      "label": "Access Rights",
+      "preset": "select_ajax",
+      "resource_url": "http://graphdb.gsq.digital:7200/repositories/GSQ_Vocabularies_core?query=PREFIX+skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs+a+skos%3AConcept%3Bskos%3AprefLabel%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Ftest.linked.data.gov.au%2Fdef%2Fgsq%2Fdata-access-rights%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
+      "choices": []
     }
   ],
   "resource_fields": [
@@ -73,9 +117,9 @@
       "preset": "resource_url_upload"
     },
     {
-      "field_name": "name",
-      "label": "Name",
-      "form_placeholder": "eg. January 2011 Gold Prices"
+      "field_name": "title",
+      "label": "Dataset Title",
+      "form_placeholder": "e.g. SEGY file for seismic survey 123456"
     },
     {
       "field_name": "description",
@@ -87,6 +131,16 @@
       "field_name": "format",
       "label": "Format",
       "preset": "resource_format_autocomplete"
+    },
+    {
+      "field_name": "byte_size",
+      "label": "Byte Size",
+      "preset": "resource_format_autocomplete"
+    },
+    {
+      "field_name": "licence",
+      "label": "Licence",
+      "form_snippet": "license.html"
     }
   ]
 }
