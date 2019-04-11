@@ -5,23 +5,6 @@
   "about_url": "https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq",
   "dataset_fields": [
     {
-      "field_name": "creator",
-      "label": "Creator",
-      "preset": "select_creator_org"
-    },
-    {
-      "field_name": "owner_org",
-      "label": "Publisher",
-      "preset": "select_creator_org"
-    },
-    {
-      "field_name": "maintainer",
-      "label": "Contact Person",
-      "form_placeholder": "A GSQ staff member",
-      "display_property": "dc:contributor",
-      "required": "true"
-    },
-    {
       "field_name": "title",
       "label": "Survey Title",
       "preset": "title",
@@ -36,16 +19,16 @@
     },
     {
       "field_name": "name",
-      "label": "Enter Survey Number",
+      "label": "Enter Seismic Survey Number",
       "preset": "dataset_slug",
-      "form_placeholder": "Enter seismic survey number",
+      "form_placeholder": "Enter survey number",
       "required": "true"
     },
     {
       "field_name": "notes",
       "label": "Survey Description",
       "form_snippet": "markdown.html",
-      "form_placeholder": "A description of the seismic survey",
+      "form_placeholder": "A detailed description of the seismic survey",
       "required": "true"
     },
     {
@@ -56,20 +39,17 @@
     {
       "field_name": "acquisition_operator",
       "label": "Acquisition Operator",
-      "preset": "title",
       "form_placeholder": "The name of the acquisition operator"
-    }, 
+    },
     {
       "field_name": "start",
       "label": "Survey Start Date",
-      "preset": "date",
-      "form_placeholder": "The start date of the seismic survey"
+      "preset": "date"
     },
     {
       "field_name": "end",
       "label": "Survey End Date",
-      "preset": "date",
-      "form_placeholder": "The end date of the seismic survey"
+      "preset": "date"
     },
     {
       "field_name": "seismic_sampling_method",
@@ -100,7 +80,7 @@
     {
       "field_name": "GeoJSONextent",
       "label": "Survey Extents in GeoJSON",
-      "form_placeholder": "Example: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000],[142.500000, -27.000000],[142.500000, -31.000000] ] ] }"
+      "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }"
     },
     {
       "field_name": "access_rights",
@@ -108,6 +88,22 @@
       "preset": "select_ajax",
       "resource_url": "http://graphdb.gsq.digital:7200/repositories/GSQ_Vocabularies_core?query=PREFIX+skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs+a+skos%3AConcept%3Bskos%3AprefLabel%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Ftest.linked.data.gov.au%2Fdef%2Fgsq%2Fdata-access-rights%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
       "choices": []
+    },
+    {
+      "field_name": "creator",
+      "label": "Creator",
+      "preset": "select_creator_org"
+    },
+    {
+      "field_name": "owner_org",
+      "label": "Publisher",
+      "preset": "select_creator_org"
+    },
+    {
+      "field_name": "maintainer",
+      "label": "Contact Person",
+      "form_placeholder": "A GSQ staff member",
+      "display_property": "dc:contributor"
     }
   ],
   "resource_fields": [
@@ -119,13 +115,13 @@
     {
       "field_name": "title",
       "label": "Dataset Title",
-      "form_placeholder": "e.g. SEGY file for seismic survey 123456"
+      "form_placeholder": "e.g. SEGY file for seismic survey 123456 - create a meaningful title to aid data discovery"
     },
     {
       "field_name": "description",
       "label": "Description",
       "form_snippet": "markdown.html",
-      "form_placeholder": "Some useful notes about the data"
+      "form_placeholder": "A useful description to give the user a thorough understanding of the dataset"
     },
     {
       "field_name": "format",
@@ -135,12 +131,14 @@
     {
       "field_name": "byte_size",
       "label": "Byte Size",
-      "preset": "resource_format_autocomplete"
+      "form_placeholder": "e.g. 235MB",
+      "help_text": "Enter file size in MB."
     },
     {
-      "field_name": "licence",
+      "field_name": "licence_id",
       "label": "Licence",
-      "form_snippet": "license.html"
+      "form_snippet": "license.html",
+      "help_text": "Open data in Queensland is typically licensed under a Creative Commons Attribution 4.0 International Licence."
     }
   ]
 }
