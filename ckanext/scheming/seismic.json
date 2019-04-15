@@ -21,7 +21,6 @@
       "field_name": "name",
       "label": "Enter Seismic Survey Number",
       "preset": "dataset_slug",
-      "form_placeholder": "Enter survey number",
       "required": "true"
     },
     {
