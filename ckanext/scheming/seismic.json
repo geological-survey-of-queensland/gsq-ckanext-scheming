@@ -103,6 +103,12 @@
       "label": "Contact Person",
       "form_placeholder": "A GSQ staff member",
       "display_property": "dc:contributor"
+    },
+    {
+      "field_name": "license_id",
+      "label": "Licence",
+      "form_snippet": "license.html",
+      "help_text": "Open data in Queensland is typically licensed under a Creative Commons Attribution 4.0 International Licence."
     }
   ],
   "resource_fields": [
@@ -132,12 +138,6 @@
       "label": "Byte Size",
       "form_placeholder": "e.g. 235MB",
       "help_text": "Enter file size in MB."
-    },
-    {
-      "field_name": "license_id",
-      "label": "Licence",
-      "form_snippet": "license.html",
-      "help_text": "Open data in Queensland is typically licensed under a Creative Commons Attribution 4.0 International Licence."
     }
   ]
 }
