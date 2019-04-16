@@ -54,21 +54,21 @@
       "field_name": "seismic_sampling_method",
       "label": "Seismic Sampling Method",
       "preset": "select_ajax",
-      "resource_url": "http://graphdb.gsq.digital:7200/repositories/GSQ_Vocabularies_core?query=PREFIX+skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs+a+skos%3AConcept%3Bskos%3AprefLabel+%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Ftest.linked.data.gov.au%2Fdef%2Fgsq%2Fseismic-sampling-method%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
+      "resource_url": "http://graphdb.gsq.digital:7200/repositories/GSQ-Vocabularies_core?query=PREFIX+skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs+a+skos%3AConcept%3Bskos%3AprefLabel+%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Ftest.linked.data.gov.au%2Fdef%2Fgsq%2Fseismic-sampling-method%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
       "choices": []
     },
     {
       "field_name": "seismic_survey_dimensionality",
       "label": "Seismic Survey Dimensionality",
       "preset": "select_ajax",
-      "resource_url": "http://graphdb.gsq.digital:7200/repositories/GSQ_Vocabularies_core?query=PREFIX+skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs+a+skos%3AConcept%3Bskos%3AprefLabel%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Ftest.linked.data.gov.au%2Fdef%2Fgsq%2Fseismic-survey-dimensionality%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
+      "resource_url": "http://graphdb.gsq.digital:7200/repositories/GSQ-Vocabularies_core?query=PREFIX+skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs+a+skos%3AConcept%3Bskos%3AprefLabel%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Ftest.linked.data.gov.au%2Fdef%2Fgsq%2Fseismic-survey-dimensionality%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
       "choices": []
     },
     {
       "field_name": "seismic_survey_status",
       "label": "Seismic Survey Status",
       "preset": "select_ajax",
-      "resource_url": "http://graphdb.gsq.digital:7200/repositories/GSQ_Vocabularies_core?query=PREFIX+skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs+a+skos%3AConcept+%3Bskos%3AprefLabel+%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Ftest.linked.data.gov.au%2Fdef%2Fgsq%2Fsurvey-status%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
+      "resource_url": "http://graphdb.gsq.digital:7200/repositories/GSQ-Vocabularies_core?query=PREFIX+skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs+a+skos%3AConcept+%3Bskos%3AprefLabel+%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Ftest.linked.data.gov.au%2Fdef%2Fgsq%2Fsurvey-status%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
       "choices": []
     },
     {
@@ -85,7 +85,7 @@
       "field_name": "access_rights",
       "label": "Access Rights",
       "preset": "select_ajax",
-      "resource_url": "http://graphdb.gsq.digital:7200/repositories/GSQ_Vocabularies_core?query=PREFIX+skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs+a+skos%3AConcept%3Bskos%3AprefLabel%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Ftest.linked.data.gov.au%2Fdef%2Fgsq%2Fdata-access-rights%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
+      "resource_url": "http://graphdb.gsq.digital:7200/repositories/GSQ-Vocabularies_core?query=PREFIX+skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs+a+skos%3AConcept%3Bskos%3AprefLabel%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Ftest.linked.data.gov.au%2Fdef%2Fgsq%2Fdata-access-rights%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
       "choices": []
     },
     {
