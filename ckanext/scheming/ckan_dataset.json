@@ -1,53 +1,131 @@
 {
   "scheming_version": 1,
   "dataset_type": "dataset",
-  "about": "A custom test schema for CKAN.",
-  "about_url": "http://github.com/ckan/ckanext-scheming",
+  "about": "Geological Survey of Queensland (GSQ) dataset profile.",
+  "about_url": "https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq",
   "dataset_fields": [
     {
       "field_name": "title",
       "label": "Dataset Title",
       "preset": "title",
-      "form_placeholder": "eg. A descriptive title"
+      "form_placeholder": "Enter a descriptive title",
+      "required": "true"
     },
     {
       "field_name": "name",
       "label": "URL",
       "preset": "dataset_slug",
-      "form_placeholder": "eg. my-dataset"
+      "required": "true"
     },
     {
       "field_name": "notes",
       "label": "Description",
       "form_snippet": "markdown.html",
-      "form_placeholder": "eg. Some useful notes about the data"
+      "form_placeholder": "A detailed description about the dataset",
+      "required": "true"
     },
     {
-      "field_name": "creator_org",
+      "field_name": "dataset_type",
+      "label": "Dataset Type",
+      "preset": "select_ajax",
+      "resource_url": "http://vocabs.gsq.digital/sparql?query=PREFIX+skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs+a+skos%3AConcept%3Bskos%3AprefLabel+%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Ftest.linked.data.gov.au%2Fdef%2Fgsq%2Fseismic-sampling-method%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
+      "choices": []
+    },
+    {
+      "field_name": "feature_of_interest_type",
+      "label": "Feature of Interest Type",
+      "help_text": "Select",
+      "help_inline": true,
+      "preset": "select",
+      "choices": [
+        {
+          "value": "http://test.linked.data.gov.au/gsq/foi/Basin",
+          "label": "Basin"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/gsq/foi/Block",
+          "label": "Block"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/gsq/foi/Borehole",
+          "label": "Borehole/well/drillhole"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/gsq/foi/Field_site",
+          "label": "Field site"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/gsq/foi/Mapsheet",
+          "label": "Mapsheet"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/gsq/foi/Mineral_deposit",
+          "label": "Mineral deposit"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/gsq/foi/Mining_permit",
+          "label": "Mining permit"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/gsq/foi/Pipeline",
+          "label": "Pipeline"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/gsq/foi/Place_name",
+          "label": "Place name"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/gsq/foi/Province",
+          "label": "Province"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/gsq/foi/Sub-block",
+          "label": "Sub-block"
+        },
+        {
+          "value": "http://test.linked.data.gov.au/gsq/foi/Not_available",
+          "label": "Not available"
+        }
+      ]
+    },
+    {
+      "field_name": "feature_of_interest",
+      "label": "Feature of Interest",
+      "form_placeholder": "The finest-grain FoI this dataset is about. Best: 'Such 'n Such Outcrop' or 'Block CHAR2255' or 'EPM12345'"
+    },
+    {
+      "field_name": "GeoJSONextent",
+      "label": "Survey Extents in GeoJSON",
+      "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }"
+    },
+    {
+      "field_name": "access_rights",
+      "label": "Access Rights",
+      "preset": "select_ajax",
+      "resource_url": "http://vocabs.gsq.digital/sparql/repositories/GSQ-Vocabularies_core?query=PREFIX+skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs+a+skos%3AConcept%3Bskos%3AprefLabel%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Ftest.linked.data.gov.au%2Fdef%2Fgsq%2Fdata-access-rights%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
+      "choices": []
+    },
+    {
+      "field_name": "creator",
       "label": "Creator",
-      "preset": "select_creator_org",
-      "help_text": "Choose from registered organisations"
+      "preset": "select_creator_org"
     },
     {
       "field_name": "owner_org",
       "label": "Publisher",
-      "preset": "dataset_organization",
-      "help_text": "Choose from registered organisations"
+      "preset": "select_creator_org"
     },
     {
-      "field_name": "for",
-      "label": "Field of Research",
-      "help_text": "Choose a suitable ANZRC Field of Research term.",
-      "help_inline": true,
-      "preset": "select_ajax",
-      "resource_url": "http://vocabs.ands.org.au/repository/api/sparql/anzsrc-for?query=PREFIX%20skos%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3ESELECT%20*%20WHERE%20%7B%3Fs%20a%20skos%3AConcept%20%3Bskos%3AprefLabel%20%3Fpl%20.FILTER%20(lang(%3Fpl)%20%3D%20%22en%22)%7D&Accept=application/sparql-results%2Bjson",
-      "choices": []
+      "field_name": "maintainer",
+      "label": "Contact Person",
+      "form_placeholder": "A GSQ contact and/or email",
+      "display_property": "dc:contributor"
     },
     {
       "field_name": "license_id",
-      "label": "License",
+      "label": "Licence",
       "form_snippet": "license.html",
-      "help_text": "License definitions and additional information can be found at http://opendefinition.org/"
+      "help_text": "Open data in Queensland is typically licensed under a Creative Commons Attribution 4.0 International Licence."
     }
   ],
   "resource_fields": [
@@ -59,7 +137,7 @@
     {
       "field_name": "name",
       "label": "Name",
-      "form_placeholder": "eg. January 2011 Gold Prices"
+      "form_placeholder": "A useful description to give the user a thorough understanding of the data resource"
     },
     {
       "field_name": "description",
@@ -71,7 +149,12 @@
       "field_name": "format",
       "label": "Format",
       "preset": "resource_format_autocomplete"
+    },
+    {
+      "field_name": "byte_size",
+      "label": "Byte Size",
+      "form_placeholder": "e.g. 235MB",
+      "help_text": "Enter file size in MB."
     }
   ]
 }
-
