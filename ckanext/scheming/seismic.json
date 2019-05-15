@@ -82,6 +82,11 @@
       "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }"
     },
     {
+      "field_name": "spatial",
+      "label": "Bounding box",
+      "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }"
+    },    
+    {
       "field_name": "access_rights",
       "label": "Access Rights",
       "preset": "select_ajax",
