@@ -36,11 +36,6 @@
       "form_placeholder": "e.g. ATP123"
     },
     {
-      "field_name": "acquisition_operator",
-      "label": "Acquisition Operator",
-      "form_placeholder": "The name of the acquisition operator"
-    },
-    {
       "field_name": "start",
       "label": "Survey Start Date",
       "preset": "date"
