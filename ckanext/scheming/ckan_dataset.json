@@ -1,6 +1,5 @@
 {
   "scheming_version": 1,
-  "dataset_type": "dataset",
   "about": "Geological Survey of Queensland (GSQ) dataset profile.",
   "about_url": "https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq",
   "dataset_fields": [
@@ -25,11 +24,54 @@
       "required": "true"
     },
     {
-      "field_name": "dataset_type",
-      "label": "Dataset Type",
-      "preset": "select_ajax",
-      "resource_url": "http://vocabs.gsq.digital/sparql?query=PREFIX+skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs+a+skos%3AConcept%3Bskos%3AprefLabel+%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Ftest.linked.data.gov.au%2Fdef%2Fgsq%2Fseismic-sampling-method%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
-      "choices": []
+      "field_name": "extra:theme",
+      "label": "Data Theme",
+      "display_property": "dcat:theme",
+      "help_text": "Select",
+      "help_inline": true,
+      "preset": "select",
+      "choices": [
+        {
+          "value": "http://linked.data.gov.au/def/geoscience-theme/biology",
+          "label": "Biology"
+        },
+        {
+          "value": "http://linked.data.gov.au/def/geoscience-theme/geochemistry",
+          "label": "Geochemistry"
+        },
+        {
+          "value": "http://linked.data.gov.au/def/geoscience-theme/geography",
+          "label": "Geography"
+        },
+        {
+          "value": "http://linked.data.gov.au/def/geoscience-theme/geology",
+          "label": "Geology"
+        },
+        {
+          "value": "http://linked.data.gov.au/def/geoscience-theme/geophysics",
+          "label": "Geophysics"
+        },
+        {
+          "value": "http://linked.data.gov.au/def/geoscience-theme/geochronology",
+          "label": "Geochronology"
+        },
+        {
+          "value": "http://linked.data.gov.au/def/geoscience-theme/seismic",
+          "label": "Seismic"
+        }
+      ]
+    },
+    {
+      "field_name": "dataset_start_date",
+      "label": "Dataset Start Date",
+      "preset": "date",
+      "display_property": "time:hasStartTime"
+    },
+    {
+      "field_name": "dataset_completed_date",
+      "label": "Datset End Date",
+      "preset": "date",
+      "display_property": "time:hasEndTime"
     },
     {
       "field_name": "feature_of_interest_type",
@@ -37,53 +79,54 @@
       "help_text": "Select",
       "help_inline": true,
       "preset": "select",
+      "display_property": "sosa:FeatureOfInterest",
       "choices": [
         {
-          "value": "http://test.linked.data.gov.au/gsq/foi/Basin",
+          "value": "http://linked.data.gov.au/def/foi/basin",
           "label": "Basin"
         },
         {
-          "value": "http://test.linked.data.gov.au/gsq/foi/Block",
+          "value": "http://linked.data.gov.au/def/foi/block",
           "label": "Block"
         },
         {
-          "value": "http://test.linked.data.gov.au/gsq/foi/Borehole",
+          "value": "http://linked.data.gov.au/def/foi/borehole",
           "label": "Borehole/well/drillhole"
         },
         {
-          "value": "http://test.linked.data.gov.au/gsq/foi/Field_site",
+          "value": "http://linked.data.gov.au/def/foi/field_site",
           "label": "Field site"
         },
         {
-          "value": "http://test.linked.data.gov.au/gsq/foi/Mapsheet",
+          "value": "http://linked.data.gov.au/def/foi/mapsheet",
           "label": "Mapsheet"
         },
         {
-          "value": "http://test.linked.data.gov.au/gsq/foi/Mineral_deposit",
+          "value": "http://linked.data.gov.au/def/foi/mineral_deposit",
           "label": "Mineral deposit"
         },
         {
-          "value": "http://test.linked.data.gov.au/gsq/foi/Mining_permit",
+          "value": "http://linked.data.gov.au/def/foi/mining_permit",
           "label": "Mining permit"
         },
         {
-          "value": "http://test.linked.data.gov.au/gsq/foi/Pipeline",
+          "value": "http://linked.data.gov.au/def/foi/pipeline",
           "label": "Pipeline"
         },
         {
-          "value": "http://test.linked.data.gov.au/gsq/foi/Place_name",
+          "value": "http://linked.data.gov.au/def/foi/place_name",
           "label": "Place name"
         },
         {
-          "value": "http://test.linked.data.gov.au/gsq/foi/Province",
+          "value": "http://linked.data.gov.au/def/foi/province",
           "label": "Province"
         },
         {
-          "value": "http://test.linked.data.gov.au/gsq/foi/Sub-block",
+          "value": "http://linked.data.gov.au/def/foi/sub-block",
           "label": "Sub-block"
         },
         {
-          "value": "http://test.linked.data.gov.au/gsq/foi/Not_available",
+          "value": "http://linked.data.gov.au/def/foi/not_available",
           "label": "Not available"
         }
       ]
@@ -91,70 +134,81 @@
     {
       "field_name": "feature_of_interest",
       "label": "Feature of Interest",
-      "form_placeholder": "The finest-grain FoI this dataset is about. Best: 'Such 'n Such Outcrop' or 'Block CHAR2255' or 'EPM12345'"
+      "form_placeholder": "'Such 'n Such Outcrop' or 'Block CHAR2255' or 'EPM12345'",
+      "display_property": "sosa:FeatureOfInterest"
     },
     {
-      "field_name": "GeoJSONextent",
-      "label": "Survey Extents in GeoJSON",
-      "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }"
-    },
-    {
-      "field_name": "access_rights",
-      "label": "Access Rights",
-      "preset": "select_ajax",
-      "resource_url": "http://vocabs.gsq.digital/sparql/repositories/GSQ-Vocabularies_core?query=PREFIX+skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs+a+skos%3AConcept%3Bskos%3AprefLabel%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Ftest.linked.data.gov.au%2Fdef%2Fgsq%2Fdata-access-rights%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
-      "choices": []
+      "field_name": "spatial",
+      "label": "Bounding box for spatial extents",
+      "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }",
+      "display_property": "dcat:bbox"
     },
     {
       "field_name": "creator",
       "label": "Creator",
-      "preset": "select_creator_org"
+      "preset": "select_creator_org",
+      "display_property": "dct:creator"
     },
     {
       "field_name": "owner_org",
       "label": "Publisher",
-      "preset": "select_creator_org"
+      "preset": "select_creator_org",
+      "display_property": "dct:publisher"
     },
     {
-      "field_name": "maintainer",
+      "field_name": "extra:contact_uri",
       "label": "Contact Person",
-      "form_placeholder": "A GSQ contact and/or email",
-      "display_property": "dc:contributor"
+      "form_placeholder": "horizonsupport@dnrme.qld.gov.au",
+      "display_property": "dcat:contactPoint"
+    },
+    {
+      "field_name": "extra:access_rights",
+      "label": "Access Rights",
+      "preset": "select_ajax",
+      "resource_url": "http://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%20%3Fpl%3Bskos%3AinScheme%20%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fdata-access%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
+      "choices": [],
+      "display_property": "dct:accessRights"
     },
     {
       "field_name": "license_id",
       "label": "Licence",
       "form_snippet": "license.html",
-      "help_text": "Open data in Queensland is typically licensed under a Creative Commons Attribution 4.0 International Licence."
+      "help_text": "Open data in Queensland is typically licensed under a Creative Commons Attribution 4.0 International Licence.",
+      "display_property": "dct:license"
     }
   ],
   "resource_fields": [
     {
-      "field_name": "url",
+      "field_name": "resource:uri",
       "label": "URL",
-      "preset": "resource_url_upload"
+      "preset": "resource_url_upload",
+      "display_property": "dcat:downloadURL"
     },
     {
-      "field_name": "name",
-      "label": "Name",
-      "form_placeholder": "A useful description to give the user a thorough understanding of the data resource"
+      "field_name": "resource:name",
+      "label": "Dataset Title",
+      "form_placeholder": "Create a meaningful title to aid data discovery",
+      "display_property": "dct:title"
     },
     {
-      "field_name": "description",
+      "field_name": "resource:description",
       "label": "Description",
       "form_snippet": "markdown.html",
-      "form_placeholder": "Some useful notes about the data"
+      "form_placeholder": "A useful description to give the user a thorough understanding of the data resource",
+      "display_property": "dct:description"
     },
     {
-      "field_name": "format",
+      "field_name": "resource:format",
       "label": "Format",
-      "preset": "resource_format_autocomplete"
+      "preset": "resource_format_autocomplete",
+      "display_property": "dct:format"
     },
     {
-      "field_name": "byte_size",
+      "field_name": "resource:size",
       "label": "Byte Size",
       "form_placeholder": "e.g. 235MB",
-      "help_text": "Enter file size in MB."
+      "help_text": "Enter file size in MB.",
+      "display_property": "dcat:byteSize"
     }
   ]
 }
