@@ -100,7 +100,7 @@
     {
       "field_name": "extra:contact_uri",
       "label": "Contact Person",
-      "form_placeholder": "horizon_support@dnrme.qld.gov.au",
+      "form_placeholder": "horizonsupport@dnrme.qld.gov.au",
       "display_property": "dcat:contactPoint"
     },
     {
