@@ -94,7 +94,7 @@
     {
       "field_name": "owner_org",
       "label": "Publisher",
-      "preset": "select_creator_org",
+      "preset": "dataset_organization",
       "display_property": "dct:publisher"
     },
     {
