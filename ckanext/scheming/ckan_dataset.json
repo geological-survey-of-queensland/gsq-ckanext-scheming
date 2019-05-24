@@ -1,6 +1,7 @@
 {
   "scheming_version": 1,
   "about": "Geological Survey of Queensland (GSQ) dataset profile.",
+  "dataset_type": "dataset",
   "about_url": "https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq",
   "dataset_fields": [
     {
