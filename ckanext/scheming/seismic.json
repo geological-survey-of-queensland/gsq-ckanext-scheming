@@ -86,13 +86,19 @@
       "display_property": "dcat:bbox"
     },
     {
-      "field_name": "author",
-      "label": "Author",
+      "field_name": "creator",
+      "label": "Creator",
       "preset": "select_creator_org",
       "display_property": "dct:creator"
     },
     {
-      "field_name": "maintainer_email",
+      "field_name": "owner_org",
+      "label": "Publisher",
+      "preset": "dataset_organization",
+      "display_property": "dct:publisher"
+    },
+    {
+      "field_name": "extra:contact_uri",
       "label": "Maintainer Email",
       "form_placeholder": "horizonsupport@dnrme.qld.gov.au",
       "display_snippet": "email.html",
