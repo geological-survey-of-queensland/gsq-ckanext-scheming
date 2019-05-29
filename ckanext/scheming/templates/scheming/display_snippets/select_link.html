@@ -21,10 +21,20 @@
 #}
 
 {% if data[field.field_name]|length > 0 %}
+    {# temporary generation of labels from URI or from a lookup list if the URIs are from BFO #}
     {% set label = data[field.field_name].split('/')[-1] %}
     {% if label is not none %}
-        <a href="{{ data[field.field_name] }}" style="border-bottom-style: dotted; border-width: 1px;">{{ label }}</a>
+      {% if label == 'BFO_0000009' %}
+        {% set label = '2D space' %}
+      {% elif label == 'BFO_0000028' %}
+        {% set label = '3D space' %}
+      {% else%}
+        {% set label = data[field.field_name].split('/')[-1] %}
+      {% endif %}
+
+      <a href="{{ data[field.field_name] }}" style="border-bottom-style: dotted; border-width: 1px;">{{ label }}</a>
     {% else %}
-        <a href="{{ data[field.field_name] }}">{{ data[field.field_name] }}</a>
+      {% if we really can't generate a sensible label, just use the whole URI %}
+      <a href="{{ data[field.field_name] }}">{{ data[field.field_name] }}</a>
     {% endif %}
 {% endif %}
