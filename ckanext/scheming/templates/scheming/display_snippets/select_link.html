@@ -1,9 +1,9 @@
-{# 
+{#
     Edmond Chuc, edmond.chuc@csiro.au
 
-    This file is part of the ckanext-scheming extension. It is required to enable hyperlinks for the "select" form snippet view. 
+    This file is part of the ckanext-scheming extension. It is required to enable hyperlinks for the "select" form snippet view.
 
-    This template should be named "select-link.html" and should reside in the directory 
+    This template should be named "select-link.html" and should reside in the directory
     /usr/lib/ckan/default/src/ckanext-scheming/ckanext/scheming/templates/scheming/display_snippets/
 
     To enable this template, be sure to modify the presets.json file and add in:
@@ -21,11 +21,10 @@
 #}
 
 {% if data[field.field_name]|length > 0 %}
-    {% set label = h.scheming_choices_label(h.scheming_field_choices(field),data[field.field_name]) %}
-    {% if label == data[field.field_name] %}
-        {% set label = "The term '" + data[field.field_name] + "' is deprecated. Click for more information" %}
+    {% set label = data[field.field_name].split('/')[-1] %}
+    {% if label is not none %}
         <a href="{{ data[field.field_name] }}" style="border-bottom-style: dotted; border-width: 1px;">{{ label }}</a>
     {% else %}
-        <a href="{{ data[field.field_name] }}">{{ label }}</a>
+        <a href="{{ data[field.field_name] }}">{{ data[field.field_name] }}</a>
     {% endif %}
 {% endif %}
