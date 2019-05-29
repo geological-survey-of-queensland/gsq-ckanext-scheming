@@ -54,7 +54,7 @@
       "field_name": "seismic_sampling_method",
       "label": "Seismic Sampling Method",
       "preset": "select_ajax",
-      "resource_url": "http://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fseismic-sampling-method%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results+json",
+      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fseismic-sampling-method%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results+json",
       "choices": [],
       "display_property": "sosa:Actuator"
     },
@@ -62,7 +62,7 @@
       "field_name": "seismic_survey_dimensionality",
       "label": "Seismic Survey Dimensionality",
       "preset": "select_ajax",
-      "resource_url": "http://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fspatial-region%2FconceptScheme%3E%3BFILTER%20(lang(%3Fpl)%20%3D%20%22en%22).%7D&Accept=application/sparql-results+json",
+      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fspatial-region%2FconceptScheme%3E%3BFILTER%20(lang(%3Fpl)%20%3D%20%22en%22).%7D&Accept=application/sparql-results+json",
       "choices": [],
       "display_property": "sosa:Procedure"
     },
@@ -70,7 +70,7 @@
       "field_name": "seismic_survey_status",
       "label": "Seismic Survey Status",
       "preset": "select_ajax",
-      "resource_url": "http://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fmining-survey-status%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results+json",
+      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fmining-survey-status%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results+json",
       "choices": []
     },
     {
@@ -86,28 +86,24 @@
       "display_property": "dcat:bbox"
     },
     {
-      "field_name": "creator",
-      "label": "Creator",
+      "field_name": "author",
+      "label": "Author",
       "preset": "select_creator_org",
       "display_property": "dct:creator"
     },
     {
-      "field_name": "owner_org",
-      "label": "Publisher",
-      "preset": "dataset_organization",
-      "display_property": "dct:publisher"
-    },
-    {
-      "field_name": "extra:contact_uri",
-      "label": "Contact Person",
+      "field_name": "maintainer_email",
+      "label": "Maintainer Email",
       "form_placeholder": "horizonsupport@dnrme.qld.gov.au",
+      "display_snippet": "email.html",
+      "display_email_name_field": "maintainer",
       "display_property": "dcat:contactPoint"
     },
     {
       "field_name": "extra:access_rights",
       "label": "Access Rights",
       "preset": "select_ajax",
-      "resource_url": "http://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%20%3Fpl%3Bskos%3AinScheme%20%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fdata-access%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
+      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%20%3Fpl%3Bskos%3AinScheme%20%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fdata-access%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
       "choices": [],
       "display_property": "dct:accessRights"
     },
