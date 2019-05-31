@@ -34,7 +34,7 @@
 
       <a href="{{ data[field.field_name] }}" style="border-bottom-style: dotted; border-width: 1px;">{{ label }}</a>
     {% else %}
-      {% if we really can't generate a sensible label, just use the whole URI %}
+      {% # if we really can't generate a sensible label, just use the whole URI %}
       <a href="{{ data[field.field_name] }}">{{ data[field.field_name] }}</a>
     {% endif %}
 {% endif %}
