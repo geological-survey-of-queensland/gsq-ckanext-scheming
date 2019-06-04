@@ -25,42 +25,12 @@
       "required": "true"
     },
     {
-      "field_name": "extra:theme",
+      "field_name": "group",
       "label": "Data Theme",
       "display_property": "dcat:theme",
-      "help_text": "Select",
-      "help_inline": true,
-      "preset": "select",
-      "choices": [
-        {
-          "value": "http://linked.data.gov.au/def/geoscience-theme/biology",
-          "label": "Biology"
-        },
-        {
-          "value": "http://linked.data.gov.au/def/geoscience-theme/geochemistry",
-          "label": "Geochemistry"
-        },
-        {
-          "value": "http://linked.data.gov.au/def/geoscience-theme/geography",
-          "label": "Geography"
-        },
-        {
-          "value": "http://linked.data.gov.au/def/geoscience-theme/geology",
-          "label": "Geology"
-        },
-        {
-          "value": "http://linked.data.gov.au/def/geoscience-theme/geophysics",
-          "label": "Geophysics"
-        },
-        {
-          "value": "http://linked.data.gov.au/def/geoscience-theme/geochronology",
-          "label": "Geochronology"
-        },
-        {
-          "value": "http://linked.data.gov.au/def/geoscience-theme/seismic",
-          "label": "Seismic"
-        }
-      ]
+      "preset": "select_ajax",
+      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%20%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fgeoscience-dataset-theme%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results+json",
+      "choices": []
     },
     {
       "field_name": "dataset_start_date",
@@ -77,60 +47,10 @@
     {
       "field_name": "feature_of_interest_type",
       "label": "Feature of Interest Type",
-      "help_text": "Select",
-      "help_inline": true,
-      "preset": "select",
       "display_property": "sosa:FeatureOfInterest",
-      "choices": [
-        {
-          "value": "http://linked.data.gov.au/def/foi/basin",
-          "label": "Basin"
-        },
-        {
-          "value": "http://linked.data.gov.au/def/foi/block",
-          "label": "Block"
-        },
-        {
-          "value": "http://linked.data.gov.au/def/foi/borehole",
-          "label": "Borehole/well/drillhole"
-        },
-        {
-          "value": "http://linked.data.gov.au/def/foi/field_site",
-          "label": "Field site"
-        },
-        {
-          "value": "http://linked.data.gov.au/def/foi/mapsheet",
-          "label": "Mapsheet"
-        },
-        {
-          "value": "http://linked.data.gov.au/def/foi/mineral_deposit",
-          "label": "Mineral deposit"
-        },
-        {
-          "value": "http://linked.data.gov.au/def/foi/mining_permit",
-          "label": "Mining permit"
-        },
-        {
-          "value": "http://linked.data.gov.au/def/foi/pipeline",
-          "label": "Pipeline"
-        },
-        {
-          "value": "http://linked.data.gov.au/def/foi/place_name",
-          "label": "Place name"
-        },
-        {
-          "value": "http://linked.data.gov.au/def/foi/province",
-          "label": "Province"
-        },
-        {
-          "value": "http://linked.data.gov.au/def/foi/sub-block",
-          "label": "Sub-block"
-        },
-        {
-          "value": "http://linked.data.gov.au/def/foi/not_available",
-          "label": "Not available"
-        }
-      ]
+      "preset": "select_ajax",
+      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%20%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fgeoscience-foi%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results+json",
+      "choices": []
     },
     {
       "field_name": "feature_of_interest",
@@ -139,16 +59,16 @@
       "display_property": "sosa:FeatureOfInterest"
     },
     {
-      "field_name": "spatial",
-      "label": "Bounding box for spatial extents",
-      "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }",
-      "display_property": "dcat:bbox"
-    },
-    {
       "field_name": "GeoJSONextent",
       "label": "Survey Extents in GeoJSON",
       "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }",
       "display_property": "locn:geometry"
+    },
+    {
+      "field_name": "spatial",
+      "label": "Bounding Box",
+      "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }",
+      "display_property": "dcat:bbox"
     },
     {
       "field_name": "creator",
@@ -163,16 +83,18 @@
       "display_property": "dct:publisher"
     },
     {
-      "field_name": "extra:contact_uri",
-      "label": "Contact Person",
+      "field_name": "maintainer_email",
+      "label": "Maintainer Email",
       "form_placeholder": "horizonsupport@dnrme.qld.gov.au",
+      "display_snippet": "email.html",
+      "display_email_name_field": "maintainer",
       "display_property": "dcat:contactPoint"
     },
     {
       "field_name": "extra:access_rights",
       "label": "Access Rights",
       "preset": "select_ajax",
-      "resource_url": "http://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%20%3Fpl%3Bskos%3AinScheme%20%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fdata-access%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
+      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%20%3Fpl%3Bskos%3AinScheme%20%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fdata-access%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
       "choices": [],
       "display_property": "dct:accessRights"
     },
