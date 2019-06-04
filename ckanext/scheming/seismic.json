@@ -1,8 +1,8 @@
 {
   "scheming_version": 1,
-  "dataset_type": "seismic",
-  "extra:theme": "seismic survey",
-  "group": "seismic survey",
+  "dataset_type": "Seismic",
+  "extra:theme": "Seismic survey",
+  "group": "Seismic survey",
   "about": "Geological Survey of Queensland (GSQ) seismic survey profile.",
   "about_url": "https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq",
   "dataset_fields": [
