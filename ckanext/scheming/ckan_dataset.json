@@ -25,7 +25,7 @@
       "required": "true"
     },
     {
-      "field_name": "group",
+      "field_name": "extra:theme",
       "label": "Data Theme",
       "display_property": "dcat:theme",
       "preset": "select_ajax",
@@ -83,7 +83,7 @@
       "display_property": "dct:publisher"
     },
     {
-      "field_name": "maintainer_email",
+      "field_name": "extra:contact_uri",
       "label": "Maintainer Email",
       "form_placeholder": "horizonsupport@dnrme.qld.gov.au",
       "display_snippet": "email.html",
