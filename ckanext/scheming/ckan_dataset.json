@@ -40,7 +40,7 @@
     },
     {
       "field_name": "dataset_completed_date",
-      "label": "Datset End Date",
+      "label": "Dataset End Date",
       "preset": "date",
       "display_property": "time:hasEndTime"
     },
