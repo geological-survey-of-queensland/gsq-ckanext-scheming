@@ -72,6 +72,12 @@
       "display_property": "dc:contributor"
     },
     {
+      "field_name": "tag_string",
+      "label": "Tags",
+      "preset": "tag_string_autocomplete",
+      "form_placeholder": "e.g. Seismic, Geochemistry, Industry Report"
+    },
+    {
       "field_name": "maintainer_email",
       "label": "Maintainer Email",
       "form_placeholder": "joe@example.com",
