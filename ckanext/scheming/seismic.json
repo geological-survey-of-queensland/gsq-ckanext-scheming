@@ -129,16 +129,14 @@
   ],
   "resource_fields": [
     {
-      "field_name": "resource:uri",
-      "label": "URL",
-      "preset": "resource_url_upload",
-      "display_property": "dcat:downloadURL"
+      "field_name": "url",
+      "label": "Resource URL",
+      "preset": "resource_url_upload"
     },
     {
-      "field_name": "resource:name",
-      "label": "Dataset Title",
-      "form_placeholder": "e.g. SEGY file for seismic survey 123456 - create a meaningful title to aid data discovery",
-      "display_property": "dct:title"
+      "field_name": "name",
+      "label": "Resource Name",
+      "form_placeholder": "GALLUS 2D Seismic Survey"
     },
     {
       "field_name": "resource:description",
