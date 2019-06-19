@@ -98,6 +98,12 @@
       "display_property": "dct:publisher"
     },
     {
+      "field_name": "tag_string",
+      "label": "Tags",
+      "preset": "tag_string_autocomplete",
+      "form_placeholder": "eg. economy, mental health, government"
+    },
+    {
       "field_name": "extra:contact_uri",
       "label": "Maintainer Email",
       "form_placeholder": "horizonsupport@dnrme.qld.gov.au",
