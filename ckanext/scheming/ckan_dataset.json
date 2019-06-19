@@ -114,14 +114,14 @@
   ],
   "resource_fields": [
     {
-      "field_name": "resource:uri",
-      "label": "URL",
+      "field_name": "url",
+      "label": "Resource URL",
       "preset": "resource_url_upload",
       "display_property": "dcat:downloadURL"
     },
     {
-      "field_name": "resource:name",
-      "label": "Dataset Title",
+      "field_name": "name",
+      "label": "Resource name",
       "form_placeholder": "Create a meaningful title to aid data discovery",
       "display_property": "dct:title"
     },
