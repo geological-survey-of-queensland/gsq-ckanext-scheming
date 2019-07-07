@@ -74,6 +74,12 @@
       "choices": []
     },
     {
+      "field_name": "seismic_survey_lines",
+      "label": "Seismic Lines",
+      "form_placeholder": "e.g. G64-1-A (prefix-identifier-suffix) - use semicolon if multiple lines",
+      "display_property": "sosa:FeatureOfInterest"
+    },
+    {
       "field_name": "GeoJSONextent",
       "label": "Survey Extents in GeoJSON",
       "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }",
