@@ -60,7 +60,7 @@
     },
     {
       "field_name": "GeoJSONextent",
-      "label": "Survey Extents in GeoJSON",
+      "label": "Extents in GeoJSON",
       "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }",
       "display_property": "locn:geometry"
     },
