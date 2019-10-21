@@ -1,77 +1,237 @@
 {
-  "scheming_version": 1,
-  "dataset_type": "report",
-  "about": "A custom test schema for CKAN.",
-  "about_url": "http://github.com/ckan/ckanext-scheming",
-  "dataset_fields": [
-    {
-      "field_name": "title",
-      "label": "Reports Title",
-      "preset": "title",
-      "form_placeholder": "eg. A descriptive title"
-    },
-    {
-      "field_name": "name",
-      "label": "URL",
-      "preset": "dataset_slug",
-      "form_placeholder": "eg. my-dataset"
-    },
-    {
-      "field_name": "notes",
-      "label": "Description",
-      "form_snippet": "markdown.html",
-      "form_placeholder": "eg. Some useful notes about the data"
-    },
-    {
-      "field_name": "creator_org",
-      "label": "Creator",
-      "preset": "select_creator_org",
-      "help_text": "Choose from registered organisations"
-    },
-    {
-      "field_name": "owner_org",
-      "label": "Publisher",
-      "preset": "dataset_organization",
-      "help_text": "Choose from registered organisations"
-    },
-    {
-      "field_name": "for",
-      "label": "Field of Research",
-      "help_text": "Choose a suitable ANZRC Field of Research term.",
-      "help_inline": true,
-      "preset": "select_ajax",
-      "resource_url": "http://vocabs.ands.org.au/repository/api/sparql/anzsrc-for?query=PREFIX%20skos%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3ESELECT%20*%20WHERE%20%7B%3Fs%20a%20skos%3AConcept%20%3Bskos%3AprefLabel%20%3Fpl%20.FILTER%20(lang(%3Fpl)%20%3D%20%22en%22)%7D&Accept=application/sparql-results%2Bjson",
-      "choices": []
-    },
-    {
-      "field_name": "license_id",
-      "label": "License",
-      "form_snippet": "license.html",
-      "help_text": "License definitions and additional information can be found at http://opendefinition.org/"
-    }
-  ],
-  "resource_fields": [
-    {
-      "field_name": "url",
-      "label": "URL",
-      "preset": "resource_url_upload"
-    },
-    {
-      "field_name": "name",
-      "label": "Name",
-      "form_placeholder": "eg. January 2011 Gold Prices"
-    },
-    {
-      "field_name": "description",
-      "label": "Description",
-      "form_snippet": "markdown.html",
-      "form_placeholder": "Some useful notes about the data"
-    },
-    {
-      "field_name": "format",
-      "label": "Format",
-      "preset": "resource_format_autocomplete"
-    }
-  ]
+    "scheming_version": 1,
+    "about": "GSQ Report Profile.",
+    "dataset_type": "report",
+    "about_url": "https://github.com/geological-survey-of-queensland/industry-report-profile",
+    "dataset_fields": [
+        {
+            "field_name": "title",
+            "label": "Report title",
+            "preset": "title",
+            "form_placeholder": "Enter the report title.",
+            "required": "true"
+        },
+        {
+            "field_name": "extra:identifier",
+            "label": "Report number",
+            "form_placeholder": "e.g. 123789",
+            "required": "true",
+            "display_property": "dct:identifier"
+        },
+        {
+            "field_name": "name",
+            "label": "URL",
+            "preset": "dataset_slug",
+            "required": "true",
+            "help_text": "Enter report number."
+        },
+        {
+            "field_name": "notes",
+            "label": "Description",
+            "form_snippet": "markdown.html",
+            "form_placeholder": "A detailed description about the report.",
+            "required": "true"
+        },
+        {
+            "field_name": "georesource_report_type",
+            "label": "Report type",
+            "display_property": "georesource_report_type",
+            "preset": "select_ajax",
+            "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%20%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fgeoresource-report%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results+json",
+            "choices": [],
+            "help_text": "Choose the georesource report type."
+        },
+        {
+            "field_name": "resource_authority_permit",
+            "label": "Permit number",
+            "form_placeholder": "e.g. ATP123 (no spaces) - use semicolon if multiple permits.",
+            "display_property": "resource_authority_permit"
+        },
+        {
+            "field_name": "extra:theme",
+            "label": "Dataset theme",
+            "display_property": "dcat:theme",
+            "preset": "select_ajax",
+            "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%20%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fgsq-dataset-theme%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results+json",
+            "choices": [],
+            "help_text": "Choose the main theme here (typically 'Reports'), enter additional themes in the Tags field."
+        },
+        {
+            "field_name": "earth_science_data_category",
+            "label": "Report contains these earth science data categories",
+            "display_property": "dct:subject",
+            "preset": "multiple_checkbox",
+            "choices": [
+                {
+                    "value": "http://linked.data.gov.au/def/earth-science-data-category/geochemistry",
+                    "label": "Geochemistry"
+                },
+                {
+                    "value": "http://linked.data.gov.au/def/earth-science-data-category/geology",
+                    "label": "Geology"
+                },
+                {
+                    "value": "http://linked.data.gov.au/def/earth-science-data-category/geophysics",
+                    "label": "Geophysics"
+                },
+                {
+                    "value": "http://linked.data.gov.au/def/earth-science-data-category/physical-geography",
+                    "label": "Physical Geography"
+                }
+            ]
+        },
+        {
+            "field_name": "feature_of_interest_type",
+            "label": "Geological or administrative feature",
+            "display_property": "sosa:FeatureOfInterest",
+            "preset": "select_ajax",
+            "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%20%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fgsq-features%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results+json",
+            "help_text": "Choose the main feature, enter additional features in the Tags field.",
+            "choices": []
+        },
+        {
+            "field_name": "geoadmin_feature",
+            "label": "Geological or administrative feature name",
+            "form_placeholder": "'Basin XYZ' or 'Block CHAR2255' or 'EPM12345'",
+            "display_property": "geoadmin_feature"
+        },
+        {
+            "field_name": "commodity",
+            "label": "Targeted or actual commodity",
+            "form_placeholder": "Use semicolon if multiple commodities",
+            "display_property": "commodity"
+        },
+        {
+            "field_name": "stratigraphy",
+            "label": "Stratigraphy",
+            "form_placeholder": "Use semicolon if multiple stratigraphy",
+            "display_property": "stratigraphy"
+        },
+        {
+            "field_name": "was_generated_by",
+            "label": "Report was generated by",
+            "display_property": "prov:wasGeneratedBy",
+            "form_placeholder": "Enter the PID of the survey or activity that generated the report."
+        },
+        {
+            "field_name": "dataset_start_date",
+            "label": "Report period start date",
+            "preset": "date",
+            "display_property": "time:hasStartTime"
+        },
+        {
+            "field_name": "dataset_completed_date",
+            "label": "Report period end date",
+            "preset": "date",
+            "display_property": "time:hasEndTime"
+        },
+        {
+            "field_name": "open_file_date",
+            "label": "Open file date",
+            "preset": "date",
+            "display_property": "dct:issued"
+        },
+        {
+            "field_name": "GeoJSONextent",
+            "label": "Dataset extents in GeoJSON",
+            "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }",
+            "display_property": "locn:geometry"
+        },
+        {
+            "field_name": "spatial",
+            "label": "Bounding box for dataset",
+            "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }",
+            "display_property": "dcat:bbox"
+        },
+        {
+            "field_name": "creator",
+            "label": "Creator",
+            "preset": "select_creator_org",
+            "help_text": "Select GSQ.",
+            "display_property": "dct:creator"
+        },
+        {
+            "field_name": "owner_org",
+            "label": "Publisher",
+            "preset": "dataset_organization",
+            "help_text": "Select GSQ.",
+            "display_property": "dct:publisher"
+        },
+        {
+            "field_name": "report_submitter",
+            "label": "Submitter",
+            "help_text": "Name of the operator responsible for submitting the report.",
+            "display_property": "report_submitter"
+        },
+        {
+            "field_name": "report_lodger",
+            "label": "Lodger",
+            "help_text": "Name of person lodging the report.",
+            "display_property": "report_lodger"
+        },
+        {
+            "field_name": "extra:contact_uri",
+            "label": "Maintainer email",
+            "form_placeholder": "horizonsupport@dnrme.qld.gov.au",
+            "display_snippet": "email.html",
+            "display_email_name_field": "maintainer",
+            "display_property": "dcat:contactPoint"
+        },
+        {
+            "field_name": "tag_string",
+            "label": "Tags",
+            "preset": "tag_string_autocomplete",
+            "form_placeholder": "eg. geochemistry, seismic, hydrocarbons",
+            "display_property": "dcat:keyword"
+        },
+        {
+            "field_name": "extra:access_rights",
+            "label": "Access Rights",
+            "preset": "select_ajax",
+            "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%20%3Fpl%3Bskos%3AinScheme%20%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fdata-access-rights%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results+json",
+            "choices": [],
+            "display_property": "dct:accessRights"
+        },
+        {
+            "field_name": "license_id",
+            "label": "Licence",
+            "form_snippet": "license.html",
+            "help_text": "Open data in Queensland is typically licensed under a Creative Commons Attribution 4.0 International Licence.",
+            "display_property": "dct:license"
+        }
+    ],
+    "resource_fields": [
+        {
+            "field_name": "url",
+            "label": "Resource URL",
+            "preset": "resource_url_upload",
+            "display_property": "dcat:downloadURL"
+        },
+        {
+            "field_name": "name",
+            "label": "Resource name",
+            "form_placeholder": "Create a meaningful title to aid data discovery",
+            "display_property": "dct:title"
+        },
+        {
+            "field_name": "resource:description",
+            "label": "Description",
+            "form_snippet": "markdown.html",
+            "form_placeholder": "A useful description to give the user a thorough understanding of the data resource",
+            "display_property": "dct:description"
+        },
+        {
+            "field_name": "resource:format",
+            "label": "Format",
+            "preset": "resource_format_autocomplete",
+            "display_property": "dct:format"
+        },
+        {
+            "field_name": "resource:size",
+            "label": "Byte size",
+            "form_placeholder": "e.g. 235MB",
+            "help_text": "Enter file size with appropriate units (MB, GB, etc).",
+            "display_property": "dcat:byteSize"
+        }
+    ]
 }
-
