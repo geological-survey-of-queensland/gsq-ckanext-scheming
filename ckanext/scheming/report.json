@@ -36,7 +36,7 @@
             "label": "Report type",
             "display_property": "georesource_report_type",
             "preset": "select_ajax",
-            "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A<http%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23>select*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%20%3Fpl%3Bskos%3AinScheme<http%3A%2F%2Flinked.data.gov.au%2Fdef%2Fgeoresource-report%2FconceptScheme>%3BFILTER(lang(%3Fpl)%3D'en').%7DORDER%20BY%20ASC(%3Fs)%0A&Accept=application/sparql-results+json",
+            "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%20%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fgeoresource-report%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%27en%27).%7DORDER%20BY%20ASC(%3Fs)%0A&Accept=application/sparql-results+json",
             "choices": []
         },
         {
