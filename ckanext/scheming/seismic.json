@@ -119,7 +119,7 @@
     {
       "field_name": "extra:contact_uri",
       "label": "Maintainer email",
-      "form_placeholder": "horizonsupport@dnrme.qld.gov.au",
+      "form_placeholder": "GSQOpenData@dnrme.qld.gov.au",
       "display_snippet": "email.html",
       "display_email_name_field": "maintainer",
       "display_property": "dcat:contactPoint"
