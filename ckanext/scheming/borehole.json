@@ -1,335 +1,201 @@
 {
-  "scheming_version": 1,
+  "scheming_version": 1.1,
+  "about": "GSQ borehole dataset.",
   "dataset_type": "borehole",
-  "about": "Geological Survey of Queensland (GSQ) borehole dataset.",
-  "about_url": "https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq",
+  "extra:theme": "http://linked.data.gov.au/def/gsq-dataset-theme/geoscience-data",
+  "about_url": "https://github.com/geological-survey-of-queensland/gsq-borehole-profile",
   "dataset_fields": [
     {
       "field_name": "title",
-      "label": "Title",
+      "label": "Borehole name",
       "preset": "title",
-      "form_placeholder": "eg. A descriptive title",
-      "validators": "not_empty"
+      "form_placeholder": "Enter the borehole name",
+      "required": "true"
+    },
+    {
+      "field_name": "extra:identifier",
+      "label": "Borehole persistent identifier",
+      "form_placeholder": "e.g. bh12345",
+      "required": "true",
+      "display_property": "dct:identifier"
     },
     {
       "field_name": "name",
-      "label": "URL",
+      "label": "Borehole PID",
       "preset": "dataset_slug",
-      "form_placeholder": "eg. my-dataset"
+      "required": "true"
     },
     {
-      "field_name": "notes",
-      "label": "Description",
-      "form_snippet": "markdown.html",
-      "form_placeholder": "eg. Some useful notes about the data"
+      "field_name": "extra:identifier",
+      "label": "Borehole aliases",
+      "form_placeholder": "Separate multiple alias with a semicolon",
+      "display_property": "dct:identifier"
     },
     {
-      "field_name": "date_of_drilling",
-      "label": "Date of Drilling",
-      "preset": "date",
-      "validators": "not_empty"
+      "field_name": "resource_authority_permit",
+      "label": "Permit number",
+      "form_placeholder": "e.g. ATP123 (no spaces) - use semicolon if multiple permits",
+      "display_property": "sosa:hasFeatureOfInterest"
     },
     {
-      "field_name": "creator_org",
-      "label": "Driller Organization",
-      "preset": "select_creator_org"
+      "field_name": "operator",
+      "label": "Operator",
+      "form_placeholder": "Name of the operator responsible for the borehole",
+      "display_property": "gsqr:operator"
     },
     {
-      "field_name": "owner_org",
-      "label": "Operator Organization",
-      "preset": "dataset_organization"
+      "field_name": "borehole_purpose",
+      "label": "Borehole purpose",
+      "display_property": "borehole_purpose",
+      "preset": "select_ajax",
+      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3ESELECT%20%3Fconcept%20%3FprefLabel%20WHERE%7B%3Fconcept%20a%20skos%3AConcept%3Bskos%3AprefLabel%20%3FprefLabel%3Bskos%3AinScheme%20%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fborehole-purpose%3E.%7Dorder%20by%20%3FprefLabel&Accept=application/sparql-results+json",
+      "choices": []
     },
     {
-      "field_name": "license_id",
-      "label": "License",
-      "form_snippet": "license.html",
-      "help_text": "License definitions and additional information can be found at http://opendefinition.org/"
+      "field_name": "borehole_sub_purpose",
+      "label": "Borehole sub-purpose",
+      "display_property": "borehole_sub_purpose",
+      "preset": "select_ajax",
+      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3ESELECT%20%3Fconcept%20%3FprefLabel%20WHERE%7B%3Fconcept%20a%20skos%3AConcept%3Bskos%3AprefLabel%20%3FprefLabel%3Bskos%3AinScheme%20%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fborehole-sub-purpose%3E.%7Dorder%20by%20%3FprefLabel&Accept=application/sparql-results+json",
+      "choices": []
     },
     {
-      "field_name": "vertical_datum",
-      "label": "Vertical Datum",
-      "validators": "not_empty",
-      "form_placeholder": "http://epsg.io/5111-datum",
-      "display_snippet": "link.html"
-    },
-    {
-      "field_name": "has_top",
-      "label": "Has Top (in meters above sea level)",
-      "validators": "not_empty",
-      "form_placeholder": "A numerical value"
-    },
-    {
-      "field_name": "has_base",
-      "label": "Has Base (in meters above sea level)",
-      "validators": "",
-      "form_placeholder": "A numerical value"
-    },
-    {
-      "field_name": "diameter",
-      "label": "Diameter (in meters)",
-      "validators": "",
-      "form_placeholder": "A numerical value"
-    },
-    {
-      "field_name": "has_geometry",
-      "label": "Geometry",
-      "validators": "",
-      "form_snippet": "markdown.html",
-      "form_placeholder": "GEOMETRY THING URI POLYGON(x1,y1 x2,y2 ... )"
-    },
-    {
-      "field_name": "drilling_method",
-      "label": "Drilling Method",
-      "help_text": "Drilling method",
-      "help_inline": true,
-      "preset": "select",
-      "choices": [
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Air_Core_Drilling",
-          "label": "Air Core Drilling"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Auger_Drilling",
-          "label": "Auger Drilling"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Blades_Drilling",
-          "label": "Blades Drilling"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Diamond_Drilling",
-          "label": "Diamond Drilling"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Hammer_Drilling",
-          "label": "Hammer Drilling"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Percussion_Drilling",
-          "label": "Percussion Drilling"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Polycrystalline_Diamond_Drilling",
-          "label": "Polycrystalline Diamond Drilling"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Reverse_Circulation_Percussion_Drilling",
-          "label": "Reverse Circulation Percussion Drilling"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Rock_Roller-Tricone_Drilling",
-          "label": "Rock Roller/Tricone Drilling"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Rotary_Air_Blow_Drilling",
-          "label": "Rotary Air Blow Drilling"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Rotary_Drilling",
-          "label": "Rotary Drilling"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-method-type#Under_Reamer_Drilling",
-          "label": "Under Reamer Drilling"
-        }
-      ]
-    },
-    {
-      "field_name": "inclination",
-      "label": "Inclination",
-      "help_text": "Inclination",
-      "help_inline": true,
-      "preset": "select",
-      "choices": [
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq/borehole-inclination#vertical",
-          "label": "Vertical"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq/borehole-inclination#horizontal",
-          "label": "Horizontal"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq/borehole-inclination#inclined-up",
-          "label": "Inclined-up"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq/borehole-inclination#inclined-down",
-          "label": "Inclined-down"
-        }
-      ]
-    },
-    {
-      "field_name": "purpose",
-      "label": "Purpose",
-      "help_text": "Purpose",
-      "help_inline": true,
-      "preset": "select",
-      "choices": [
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#greenhouse_gas_storage",
-          "label": "Greenhouse Gas Storage"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#petroleum",
-          "label": "Petroleum"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#water",
-          "label": "Water"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#stratigraphic",
-          "label": "Stratigraphic"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#mineral",
-          "label": "Mineral"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#coal",
-          "label": "Coal"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#coal_seam_gas",
-          "label": "Coal Seam Gas"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#supply_bore",
-          "label": "Supply Bore"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#appraisal_well",
-          "label": "Appraisal Well"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#collaborative_initiative_drilling_well",
-          "label": "Collaborative Initiative Drilling Well"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#collaborative_drilling_borehole",
-          "label": "Collaborative Drilling Borehole"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#development_well",
-          "label": "Development Well"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#exploration_well",
-          "label": "Exploration Well"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#exploration_borehole",
-          "label": "Exploration Borehole"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#gas_content_borehole",
-          "label": "Gas Content Borehole"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#geotechnical_borehole",
-          "label": "Geotechnical Borehole"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-bore-types#coal_seam_gas_injection_well",
-          "label": "Coal Seam Gas Injection Well"
-        }
-      ]
-    },
-    {
-      "field_name": "start_type",
-      "label": "Start Type",
-      "help_text": "gsml:StartPoint",
-      "help_inline": true,
-      "preset": "select",
-      "choices": [
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-borehole-start-type#natural_ground_surface",
-          "label": "Natural Ground Surface"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-borehole-start-type#open_pit_floor_or_wall",
-          "label": "Open Pit Floor or Wall"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-borehole-start-type#underground",
-          "label": "Underground"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-borehole-start-type#from_pre-existing_hole",
-          "label": "From Pre-existing Hole"
-        }
-      ]
+      "field_name": "borehole_class",
+      "label": "Borehole class",
+      "display_property": "borehole_class",
+      "preset": "select_ajax",
+      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3E%20SELECT%20%3Fconcept%20%3FprefLabel%20WHERE%7B%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fsite-status%2Fborehole-status%3E%20skos%3Amember%20%3Fconcept.%20%3Fconcept%20skos%3AprefLabel%20%3FprefLabel.%7Dorder%20by%20%3FprefLabel&Accept=application/sparql-results+json",
+      "choices": []
     },
     {
       "field_name": "status",
-      "label": "Status",
-      "help_text": "Status",
-      "help_inline": true,
-      "preset": "select",
-      "choices": [
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-borehole-status#injecting",
-          "label": "Injecting"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-borehole-status#never_drilled",
-          "label": "Never Drilled"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-borehole-status#plugged_and_abandoned",
-          "label": "Plugged and Abandoned"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-borehole-status#producing_hydrocarbons",
-          "label": "Producing Hydrocarbons"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-borehole-status#propsed_to_be_drilled",
-          "label": "Proposed to be Drilled"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-borehole-status#suspended_capped_or_shut-in",
-          "label": "Suspended, Capped or Shut-in"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-borehole-status#unknown",
-          "label": "Unknown"
-        },
-        {
-          "value": "http://test.linked.data.gov.au/def/gsq-borehole-status#water_bore",
-          "label": "Water Bore"
-        }
-      ]
+      "label": "Borehole status",
+      "display_property": "borehole_status",
+      "preset": "select_ajax",
+      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3ESELECT%20%3Fconcept%20%3FprefLabel%20WHERE%7B%3Fconcept%20a%20skos%3AConcept%3Bskos%3AprefLabel%3FprefLabel%3Bskos%3AinScheme%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fresource-project-lifecycle%3E.%7Dorder%20by%20%3FprefLabel&Accept=application/sparql-results+json",
+      "choices": []
     },
     {
-      "field_name": "contact_point",
-      "label": "Contact Point",
-      "form_placeholder": "joe@example.com",
-      "display_snippet": "email.html"
+      "field_name": "drill_start_date",
+      "label": "Drill start date",
+      "preset": "date",
+      "display_property": "time:hasStartTime"
+    },
+    {
+      "field_name": "drill_end_date",
+      "label": "Drill end date",
+      "preset": "date",
+      "display_property": "time:hasEndTime"
+    },
+    {
+      "field_name": "rig_release_date",
+      "label": "Rig release date",
+      "preset": "date",
+      "display_property": "has_rig_release_date"
+    },
+    {
+      "field_name": "GeoJSONextent",
+      "label": "Borehole point location in GeoJSON",
+      "form_placeholder": "e.g.: { \"type\":\"Point\", \"coordinates\":[142.500000, -31.000000] }",
+      "display_property": "locn:geometry"
+    },
+    {
+      "field_name": "spatial",
+      "label": "Bounding box for borehole",
+      "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }",
+      "display_property": "dcat:bbox"
+    },
+    {
+      "field_name": "has_depth",
+      "label": "Total depth",
+      "form_placeholder": "A numerical value",
+      "display_property": "has_depth"
+    },
+    {
+      "field_name": "has_sample",
+      "label": "Has samples",
+      "form_placeholder": "Separate multiple samples with a semi-colon",
+      "display_property": "sosa:hasSample"
+    },
+    {
+      "field_name": "has_observation",
+      "label": "Has observations",
+      "form_placeholder": "Separate multiple observations with a semi-colon",
+      "display_property": "sosa:observation"
+    },
+    {
+      "field_name": "creator",
+      "label": "Creator",
+      "preset": "select_creator_org",
+      "display_property": "dct:creator"
+    },
+    {
+      "field_name": "owner_org",
+      "label": "Publisher",
+      "preset": "dataset_organization",
+      "display_property": "dct:publisher"
+    },
+    {
+      "field_name": "extra:contact_uri",
+      "label": "Maintainer email",
+      "form_placeholder": "GSQOpenData@dnrme.qld.gov.au",
+      "display_snippet": "email.html",
+      "display_email_name_field": "maintainer",
+      "display_property": "dcat:contactPoint"
+    },
+    {
+      "field_name": "extra:access_rights",
+      "label": "Access rights",
+      "preset": "select_ajax",
+      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3ESELECT%3Fconcept%3FprefLabel%20WHERE%7B%3Fconcept%20a%20skos%3AConcept%3Bskos%3AprefLabel%3FprefLabel%3Bskos%3AinScheme%20%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fdata-access-rights%3E.%7Dorder%20by%20%3FprefLabel&Accept=application/sparql-results+json",
+      "choices": [],
+      "display_property": "dct:accessRights"
+  },
+    {
+      "field_name": "open_file_date",
+      "label": "Open file date",
+      "preset": "date",
+      "display_property": "dct:issued"
+    },
+    {
+      "field_name": "license_id",
+      "label": "Licence",
+      "form_snippet": "license.html",
+      "help_text": "Open data in Queensland is typically licensed under a Creative Commons Attribution 4.0 International Licence.",
+      "display_property": "dct:license"
     }
   ],
-  "resource_fields": [
-    {
+  "resource_fields": [{
       "field_name": "url",
-      "label": "URL",
-      "preset": "resource_url_upload"
+      "label": "Resource URL",
+      "preset": "resource_url_upload",
+      "display_property": "dcat:downloadURL"
     },
     {
       "field_name": "name",
-      "label": "Name",
-      "form_placeholder": "eg. January 2011 Gold Prices"
+      "label": "Resource name",
+      "form_placeholder": "Create a meaningful title to aid data discovery",
+      "display_property": "dct:title"
     },
     {
-      "field_name": "description",
+      "field_name": "resource:description",
       "label": "Description",
       "form_snippet": "markdown.html",
-      "form_placeholder": "Some useful notes about the data"
+      "form_placeholder": "A useful description to give the user a thorough understanding of the data resource",
+      "display_property": "dct:description"
     },
     {
-      "field_name": "format",
+      "field_name": "resource:format",
       "label": "Format",
-      "preset": "resource_format_autocomplete"
+      "preset": "resource_format_autocomplete",
+      "display_property": "dct:format"
+    },
+    {
+      "field_name": "resource:size",
+      "label": "Byte size",
+      "form_placeholder": "e.g. 235MB",
+      "help_text": "Enter file size with appropriate units (MB, GB, etc).",
+      "display_property": "dcat:byteSize"
     }
   ]
 }

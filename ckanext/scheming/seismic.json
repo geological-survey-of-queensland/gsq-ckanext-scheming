@@ -1,93 +1,106 @@
 {
-  "scheming_version": 1,
-  "dataset_type": "seismic",
-  "extra:theme": "seismic survey",
+  "scheming_version": 1.1,
   "about": "Geological Survey of Queensland (GSQ) seismic survey profile.",
-  "about_url": "https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq",
+  "dataset_type": "seismic",
+  "extra:theme": "http://linked.data.gov.au/def/gsq-dataset-theme/geoscience-data",
+  "about_url": "https://github.com/geological-survey-of-queensland/gsq-survey-profile",
   "dataset_fields": [
     {
       "field_name": "title",
-      "label": "Survey Title",
+      "label": "Survey title",
       "preset": "title",
-      "form_placeholder": "The title of the seismic survey",
+      "form_placeholder": "Enter the seismic survey title",
       "required": "true"
     },
     {
       "field_name": "extra:identifier",
-      "label": "Survey Number",
-      "form_placeholder": "e.g. 123789",
+      "label": "Survey number",
+      "form_placeholder": "e.g. ss123789",
       "required": "true",
       "display_property": "dct:identifier"
     },
     {
       "field_name": "name",
-      "label": "Enter Seismic Survey Number",
+      "label": "Seismic survey PID",
       "preset": "dataset_slug",
       "required": "true"
     },
     {
       "field_name": "notes",
-      "label": "Survey Description",
+      "label": "Survey description",
       "form_snippet": "markdown.html",
       "form_placeholder": "A detailed description of the seismic survey",
-      "required": "true"
+      "required": "true",
+      "display_property": "dct:description"
     },
     {
       "field_name": "resource_authority_permit",
-      "label": "Permit Number",
+      "label": "Permit number",
       "form_placeholder": "e.g. ATP123 (no spaces) - use semicolon if multiple permits",
-      "display_property": "sosa:FeatureOfInterest"
+      "display_property": "sosa:hasFeatureOfInterest"
     },
     {
-      "field_name": "acquisition_start_date",
-      "label": "Acquisition Start Date",
-      "preset": "date",
-      "display_property": "time:hasStartTime"
+      "field_name": "operator",
+      "label": "Operator",
+      "form_placeholder": "Name of the operator responsible for the survey",
+      "display_property": "gsqr:operator"
     },
     {
-      "field_name": "acquisition_completed_date",
-      "label": "Acquisition Completed Date",
-      "preset": "date",
-      "display_property": "time:hasEndTime"
+      "field_name": "contractor",
+      "label": "Operator",
+      "form_placeholder": "Name of the operator responsible for the survey",
+      "display_property": "gsqr:contractor"
     },
     {
       "field_name": "seismic_sampling_method",
-      "label": "Seismic Sampling Method",
+      "label": "Seismic sampling method",
       "preset": "select_ajax",
-      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fseismic-sampling-method%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results+json",
+      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3ESELECT%3Fconcept%3FprefLabel%20WHERE%7B%3Fconcept%20a%20skos%3AConcept%3Bskos%3AprefLabel%3FprefLabel%3Bskos%3AinScheme%20%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fseismic-sampling-method%3E.%7Dorder%20by%20%3FprefLabel&Accept=application/sparql-results+json",
       "choices": [],
       "display_property": "sosa:Actuator"
     },
     {
       "field_name": "seismic_survey_dimensionality",
-      "label": "Seismic Survey Dimensionality",
+      "label": "Seismic survey dimensionality",
       "preset": "select_ajax",
-      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fspatial-region%2FconceptScheme%3E%3BFILTER%20(lang(%3Fpl)%20%3D%20%22en%22).%7D&Accept=application/sparql-results+json",
+      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3ESELECT%3Fconcept%3FprefLabel%20WHERE%7B%3Fconcept%20a%20skos%3AConcept%3Bskos%3AprefLabel%3FprefLabel%3Bskos%3AinScheme%20%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fseismic-dimensionality%3E.%7Dorder%20by%20%3FprefLabel&Accept=application/sparql-results+json",
       "choices": [],
       "display_property": "sosa:Procedure"
     },
     {
       "field_name": "seismic_survey_status",
-      "label": "Seismic Survey Status",
+      "label": "Seismic survey status",
       "preset": "select_ajax",
-      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%3Fpl%3Bskos%3AinScheme%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fmining-survey-status%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results+json",
+      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3ESELECT%3Fconcept%3FprefLabel%20WHERE%7B%3Fconcept%20a%20skos%3AConcept%3Bskos%3AprefLabel%3FprefLabel%3Bskos%3AinScheme%20%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fsurvey-status%3E.%7Dorder%20by%20%3FprefLabel&Accept=application/sparql-results+json",
       "choices": []
     },
     {
+      "field_name": "acquisition_start_date",
+      "label": "Acquisition start date",
+      "preset": "date",
+      "display_property": "time:hasStartTime"
+    },
+    {
+      "field_name": "acquisition_completed_date",
+      "label": "Acquisition completed date",
+      "preset": "date",
+      "display_property": "time:hasEndTime"
+    },
+    {
       "field_name": "seismic_survey_lines",
-      "label": "Seismic Lines",
+      "label": "Seismic lines",
       "form_placeholder": "e.g. G64-1-A (prefix-identifier-suffix) - use semicolon if multiple lines",
-      "display_property": "sosa:FeatureOfInterest"
+      "display_property": "sosa:hasFeatureOfInterest"
     },
     {
       "field_name": "GeoJSONextent",
-      "label": "Survey Extents in GeoJSON",
+      "label": "Survey extents in GeoJSON",
       "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }",
       "display_property": "locn:geometry"
     },
     {
       "field_name": "spatial",
-      "label": "Bounding Box",
+      "label": "Bounding box",
       "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }",
       "display_property": "dcat:bbox"
     },
@@ -104,14 +117,8 @@
       "display_property": "dct:publisher"
     },
     {
-      "field_name": "tag_string",
-      "label": "Tags",
-      "preset": "tag_string_autocomplete",
-      "form_placeholder": "eg. geochemistry, seismic, industry report"
-    },
-    {
       "field_name": "extra:contact_uri",
-      "label": "Maintainer Email",
+      "label": "Maintainer email",
       "form_placeholder": "horizonsupport@dnrme.qld.gov.au",
       "display_snippet": "email.html",
       "display_email_name_field": "maintainer",
@@ -121,9 +128,15 @@
       "field_name": "extra:access_rights",
       "label": "Access Rights",
       "preset": "select_ajax",
-      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3Eselect*where%7B%3Fs%20a%20skos%3AConcept%3Bskos%3AprefLabel%20%3Fpl%3Bskos%3AinScheme%20%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fdata-access%2FconceptScheme%3E%3BFILTER(lang(%3Fpl)%3D%22en%22).%7D&Accept=application/sparql-results%2Bjson",
+      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3ESELECT%3Fconcept%3FprefLabel%20WHERE%7B%3Fconcept%20a%20skos%3AConcept%3Bskos%3AprefLabel%3FprefLabel%3Bskos%3AinScheme%20%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fdata-access-rights%3E.%7Dorder%20by%20%3FprefLabel&Accept=application/sparql-results+json",
       "choices": [],
       "display_property": "dct:accessRights"
+    },
+    {
+      "field_name": "open_file_date",
+      "label": "Open file date",
+      "preset": "date",
+      "display_property": "dct:issued"
     },
     {
       "field_name": "license_id",
@@ -133,16 +146,17 @@
       "display_property": "dct:license"
     }
   ],
-  "resource_fields": [
-    {
+  "resource_fields": [{
       "field_name": "url",
       "label": "Resource URL",
-      "preset": "resource_url_upload"
+      "preset": "resource_url_upload",
+      "display_property": "dcat:downloadURL"
     },
     {
       "field_name": "name",
-      "label": "Resource Name",
-      "form_placeholder": "GALLUS 2D Seismic Survey"
+      "label": "Resource name",
+      "form_placeholder": "GALLUS 2D Seismic Survey",
+      "display_property": "dct:title"
     },
     {
       "field_name": "resource:description",
@@ -159,9 +173,9 @@
     },
     {
       "field_name": "resource:size",
-      "label": "Byte Size",
+      "label": "Byte size",
       "form_placeholder": "e.g. 235MB",
-      "help_text": "Enter file size in MB.",
+      "help_text": "Enter file size with appropriate units (MB, GB, etc).",
       "display_property": "dcat:byteSize"
     }
   ]
