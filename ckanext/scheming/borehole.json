@@ -26,7 +26,7 @@
       "required": "true"
     },
     {
-      "field_name": "extra:identifier",
+      "field_name": "alias",
       "label": "Borehole aliases",
       "form_placeholder": "Separate multiple alias with a semicolon",
       "display_property": "dct:identifier"
