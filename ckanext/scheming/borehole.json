@@ -76,13 +76,13 @@
       "choices": []
     },
     {
-      "field_name": "drill_start_date",
+      "field_name": "dataset_start_date",
       "label": "Drill start date",
       "preset": "date",
       "display_property": "time:hasStartTime"
     },
     {
-      "field_name": "drill_end_date",
+      "field_name": "dataset_end_date",
       "label": "Drill end date",
       "preset": "date",
       "display_property": "time:hasEndTime"
