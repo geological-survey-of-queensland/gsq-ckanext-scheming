@@ -1,6 +1,6 @@
 {
   "scheming_version": 1.2,
-  "about": "GSQ Dataset Profile.",
+  "about": "GSQ dataset profile.",
   "dataset_type": "dataset",
   "about_url": "https://github.com/geological-survey-of-queensland/gsq-dataset-profile",
   "dataset_fields": [{
@@ -12,14 +12,14 @@
     },
     {
       "field_name": "extra:identifier",
-      "label": "Report persistent identifier",
+      "label": "Dataset persistent identifier",
       "form_placeholder": "e.g. ds12345",
       "required": "true",
       "display_property": "dct:identifier"
     },
     {
       "field_name": "name",
-      "label": "Dataset PID",
+      "label": "Dataset PID URL",
       "preset": "dataset_slug",
       "required": "true"
     },
@@ -39,7 +39,7 @@
       "choices": []
     },
     {
-      "field_name": "geoadmin_feature",
+      "field_name": "geologic_feature",
       "label": "Dataset is of geological features",
       "form_placeholder": "From Geologic Feature Types vocabulary",
       "display_property": "sosa:hasFeatureOfInterest"
@@ -58,13 +58,13 @@
     },
     {
       "field_name": "GeoJSONextent",
-      "label": "Extents in GeoJSON",
+      "label": "Dataset extents in GeoJSON",
       "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }",
       "display_property": "locn:geometry"
     },
     {
       "field_name": "spatial",
-      "label": "Bounding box",
+      "label": "Bounding box in GeoJSON",
       "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }",
       "display_property": "dcat:bbox"
     },

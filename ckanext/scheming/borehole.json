@@ -21,7 +21,7 @@
     },
     {
       "field_name": "name",
-      "label": "Borehole PID",
+      "label": "Borehole PID URL",
       "preset": "dataset_slug",
       "required": "true"
     },
@@ -101,7 +101,7 @@
     },
     {
       "field_name": "spatial",
-      "label": "Bounding box for borehole",
+      "label": "Bounding box in GeoJSON for borehole",
       "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }",
       "display_property": "dcat:bbox"
     },

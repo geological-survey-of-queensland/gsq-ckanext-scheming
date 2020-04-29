@@ -1,8 +1,8 @@
 {
     "scheming_version": 1.1,
     "about": "GSQ Report Profile.",
-    "dataset_type": "http://linked.data.gov.au/def/gsq-dataset-theme/reports",
-    "extra:theme": "seismic survey",
+    "dataset_type": "reports",
+    "extra:theme": "http://linked.data.gov.au/def/gsq-dataset-theme/reports",
     "about_url": "https://github.com/geological-survey-of-queensland/industry-report-profile",
     "dataset_fields": [
         {
@@ -21,7 +21,7 @@
         },
         {
             "field_name": "name",
-            "label": "Report PID",
+            "label": "Report PID URL",
             "preset": "dataset_slug",
             "required": "true"
         },
@@ -62,25 +62,7 @@
             "field_name": "earth_science_data_category",
             "label": "Report contains earth science data categories",
             "display_property": "dct:subject",
-            "preset": "multiple_checkbox",
-            "choices": [
-                {
-                    "value": "http://linked.data.gov.au/def/earth-science-data-category/geochemistry",
-                    "label": "Geochemistry"
-                },
-                {
-                    "value": "http://linked.data.gov.au/def/earth-science-data-category/geology",
-                    "label": "Geology"
-                },
-                {
-                    "value": "http://linked.data.gov.au/def/earth-science-data-category/geophysics",
-                    "label": "Geophysics"
-                },
-                {
-                    "value": "http://linked.data.gov.au/def/earth-science-data-category/physical-geography",
-                    "label": "Physical Geography"
-                }
-            ]
+            "form_placeholder": "Use semicolon if multiple categories"
         },
         {
             "field_name": "commodity",
@@ -89,7 +71,7 @@
             "display_property": "commodity"
         },
         {
-            "field_name": "geoadmin_feature",
+            "field_name": "geologic_feature",
             "label": "Report is of geological features",
             "form_placeholder": "From Geologic Feature Types vocabulary",
             "display_property": "sosa:hasFeatureOfInterest"
@@ -114,15 +96,9 @@
         },
         {
             "field_name": "spatial",
-            "label": "Bounding box for report",
+            "label": "Bounding box in GeoJSON for report",
             "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }",
             "display_property": "dcat:bbox"
-        },
-        {
-            "field_name": "report_submitter",
-            "label": "Submitter",
-            "form_placeholder": "Name of the operator responsible for submitting the report",
-            "display_property": "prov:wasAttributedTo"
         },
         {
             "field_name": "creator",

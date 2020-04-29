@@ -1,11 +1,10 @@
 {
   "scheming_version": 1.0,
-  "about": "Geological Survey of Queensland (GSQ) electrical survey profile.",
+  "about": "GSQ electrical survey profile.",
   "dataset_type": "electrical",
   "extra:theme": "http://linked.data.gov.au/def/gsq-dataset-theme/geoscience-data",
   "about_url": "https://github.com/geological-survey-of-queensland/gsq-survey-profile",
-  "dataset_fields": [
-    {
+  "dataset_fields": [{
       "field_name": "title",
       "label": "Survey title",
       "preset": "title",
@@ -21,7 +20,7 @@
     },
     {
       "field_name": "name",
-      "label": "Electrical survey PID",
+      "label": "Electrical survey PID URL",
       "preset": "dataset_slug",
       "required": "true"
     },
@@ -51,12 +50,30 @@
       "display_property": "gsqr:contractor"
     },
     {
-      "field_name": "sampling_method",
-      "label": "Sampling method",
+      "field_name": "job_number",
+      "label": "Job number",
+      "form_placeholder": "Job number for the survey",
+      "display_property": "dcterms:identifier"
+    },
+    {
+      "field_name": "observation_method",
+      "label": "Observation method",
       "preset": "select_ajax",
-      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3ESELECT%3Fconcept%3FprefLabel%20WHERE%7B%3Fconcept%20a%20skos%3AConcept%3Bskos%3AprefLabel%3FprefLabel%3Bskos%3AinScheme%20%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Felectrical-sampling-method%3E.%7Dorder%20by%20%3FprefLabel&Accept=application/sparql-results+json",
+      "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3ESELECT%3Fconcept%3FprefLabel%20WHERE%7B%3Fconcept%20a%20skos%3AConcept%3Bskos%3AprefLabel%3FprefLabel%3Bskos%3AinScheme%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fgeological-observation-method%3E.%7Dorder%20by%3FprefLabel&Accept=application/sparql-results+json",
       "choices": [],
       "display_property": "sosa:Actuator"
+    },
+    {
+      "field_name": "observation_instrument",
+      "label": "Observation instrument",
+      "form_placeholder": "Instrument used",
+      "display_property": "sosa:Sensor"
+    },
+    {
+      "field_name": "survey_resolution",
+      "label": "Survey interval (resolution in metres)",
+      "form_placeholder": "Interval in metres",
+      "display_property": "ssn-system:Resolution"
     },
     {
       "field_name": "survey_status",
@@ -66,21 +83,21 @@
       "choices": []
     },
     {
-      "field_name": "acquisition_start_date",
+      "field_name": "dataset_start_date",
       "label": "Acquisition start date",
       "preset": "date",
       "display_property": "time:hasStartTime"
     },
     {
-      "field_name": "acquisition_completed_date",
+      "field_name": "dataset_completion_date",
       "label": "Acquisition completed date",
       "preset": "date",
       "display_property": "time:hasEndTime"
     },
     {
-      "field_name": "electrical_survey_lines",
-      "label": "electrical lines",
-      "form_placeholder": "e.g. G64-1-A (prefix-identifier-suffix) - use semicolon if multiple lines",
+      "field_name": "survey_lines",
+      "label": "Survey lines",
+      "form_placeholder": "e.g. 7735800N - use semicolon if multiple lines",
       "display_property": "sosa:hasFeatureOfInterest"
     },
     {
@@ -91,7 +108,7 @@
     },
     {
       "field_name": "spatial",
-      "label": "Bounding box",
+      "label": "Bounding box in GeoJSON",
       "form_placeholder": "e.g.: { \"type\":\"Polygon\", \"coordinates\":[ [ [142.500000, -31.000000],[147.000000, -31.000000],[147.000000, -27.000000] ] ] }",
       "display_property": "dcat:bbox"
     },
@@ -117,7 +134,7 @@
     },
     {
       "field_name": "extra:access_rights",
-      "label": "Access Rights",
+      "label": "Access rights",
       "preset": "select_ajax",
       "resource_url": "https://vocabs.gsq.digital/endpoint?query=PREFIX%20skos%3A%3Chttp%3A%2F%2Fwww.w3.org%2F2004%2F02%2Fskos%2Fcore%23%3ESELECT%3Fconcept%3FprefLabel%20WHERE%7B%3Fconcept%20a%20skos%3AConcept%3Bskos%3AprefLabel%3FprefLabel%3Bskos%3AinScheme%20%3Chttp%3A%2F%2Flinked.data.gov.au%2Fdef%2Fdata-access-rights%3E.%7Dorder%20by%20%3FprefLabel&Accept=application/sparql-results+json",
       "choices": [],
