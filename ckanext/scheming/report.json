@@ -30,8 +30,7 @@
             "label": "Description",
             "form_snippet": "markdown.html",
             "form_placeholder": "A detailed description of the report",
-            "required": "true",
-            "display_property": "dct:description"
+            "required": "true"
         },
         {
             "field_name": "georesource_report_type",
